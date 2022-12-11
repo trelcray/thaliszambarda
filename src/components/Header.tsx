@@ -9,23 +9,25 @@ import {
   Anchor,
   Title,
 } from "@mantine/core";
-import { useDisclosure, useLocalStorage } from "@mantine/hooks";
+import { useLocalStorage } from "@mantine/hooks";
 import { IconSun, IconMoonStars } from "@tabler/icons";
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { LanguagePicker } from "./LanguagePicker";
 
-interface Props {}
+interface Props {
+  inView: number;
+}
 
 const data = [
-  { label: "Home", link: "#home" },
-  { label: "About", link: "#about" },
-  { label: "Experiences", link: "#experiences" },
-  { label: "Skills", link: "#skills" },
-  { label: "Projects", link: "#projects" },
-  { label: "Contact", link: "#contact" },
+  { label: "Home", link: "home" },
+  { label: "About", link: "about" },
+  { label: "Experiences", link: "experiences" },
+  { label: "Skills", link: "skills" },
+  { label: "Projects", link: "projects" },
+  { label: "Contact", link: "contact" },
 ];
 
-export function Header({}: Props) {
+export function Header({ inView }: Props) {
   const [theme, setTheme] = useLocalStorage<ColorScheme>({
     key: "mantine-color-scheme",
     defaultValue: "light",
@@ -35,19 +37,23 @@ export function Header({}: Props) {
   const [opened, setOpened] = useState(false);
   const [active, setActive] = useState(0);
 
+  const handleClick = (link: string, e: FormEvent, index: number) => {
+    e.preventDefault();
+    const href = document.getElementById(link);
+    href?.scrollIntoView({ behavior: "smooth" });
+    setActive(index);
+  };
+
   const items = data.map((item, index) => (
     <Anchor<"a">
-      href={item.link}
       key={index}
       variant="text"
       className={
         index === active
-          ? "group uppercase text-blue-400 dark:text-blue-500 transition-all duration-300 ease-in-out"
-          : "group uppercase text-gray-700 dark:text-white transition-all duration-300 ease-in-out"
+          ? "group uppercase text-sky-800 dark:text-blue-700 font-semibold transition-all duration-300 ease-in-out"
+          : "group uppercase text-white transition-all duration-300 ease-in-out"
       }
-      onClick={() => {
-        setActive(index);
-      }}
+      onClick={(e) => handleClick(item.link, e, index)}
     >
       <span className="bg-left-bottom pb-2 bg-gradient-to-r from-blue-400 to-white dark:from-blue-500 dark:to-gray-900 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
         {item.label}
@@ -57,7 +63,7 @@ export function Header({}: Props) {
 
   const changeBackground = () => {
     const { scrollY } = window;
-    if (scrollY >= 25) {
+    if (scrollY >= 15) {
       setNavbar(true);
     } else {
       setNavbar(false);
@@ -69,13 +75,16 @@ export function Header({}: Props) {
   }
 
   const HandleChangeTheme = () => {
-    setOpened(false);
     toggleColorScheme();
   };
 
   useEffect(() => {
     window.addEventListener("scroll", changeBackground);
   }, []);
+
+  useEffect(() => {
+    setActive(inView);
+  }, [active, inView]);
 
   useEffect(() => {
     if (theme === "dark") {
@@ -89,7 +98,7 @@ export function Header({}: Props) {
     <PrimitiveHeader
       className={
         navbar
-          ? "sticky border-0 top-0 bg-opacity-20 dark:bg-opacity-20 bg-teal-300 dark:bg-gray-700 z-50"
+          ? "sticky border-0 top-0 bg-opacity-20 dark:bg-opacity-20 bg-sky-50 dark:bg-gray-700 z-50"
           : "border-b-0 py-14 bg-transparent h-24"
       }
       height={70}
@@ -98,10 +107,10 @@ export function Header({}: Props) {
         className="flex justify-between mx-2 lg:mx-2 items-center h-full"
         fluid
       >
-        <section className="dark:text-white text-gray-700 uppercase text-xl space-x-2">
+        <section className="text-white uppercase text-xl space-x-2">
           <Title className="text-2xl xl:text-4xl">
             Thalis{" "}
-            <span className="dark:text-blue-700 text-blue-400">Zambarda</span>
+            <span className="dark:text-blue-700 text-sky-800">Zambarda</span>
           </Title>
         </section>
         <Group className="xl:gap-6 hidden lg:flex">{items}</Group>
@@ -109,7 +118,7 @@ export function Header({}: Props) {
           <Group className="hidden lg:flex">
             <ActionIcon
               variant="outline"
-              className="rounded-full dark:text-yellow-500 text-blue-500"
+              className="rounded-full border-gray-200 dark:border-gray-300 dark:text-yellow-500 text-sky-800"
               onClick={() => toggleColorScheme()}
               title="Toggle color scheme"
             >
@@ -134,23 +143,21 @@ export function Header({}: Props) {
             <Menu.Target>
               <Burger
                 className="lg:hidden"
-                color={theme === "dark" ? "white" : "black"}
+                color="white"
                 opened={opened}
-                onClick={() => setOpened(false)}
               />
             </Menu.Target>
 
-            <Menu.Dropdown className="lg:hidden bg-teal-100/95 dark:bg-gray-700">
+            <Menu.Dropdown className="lg:hidden bg-sky-100/95 dark:bg-gray-700">
               <Menu.Label>Navigation</Menu.Label>
 
               {data.map((item, index) => (
                 <Menu.Item
                   key={index}
-                  onClick={() => setOpened(false)}
-                  className="focus:bg-teal-200 hover:bg-teal-200 dark:text-white focus:dark:bg-gray-500 hover:dark:bg-gray-500 transition-colors duration-300 ease-in"
+                  className="focus:bg-sky-200 hover:bg-sky-200 dark:text-white focus:dark:bg-gray-500 hover:dark:bg-gray-500 transition-colors duration-300 ease-in"
+                  onClick={(e: FormEvent) => handleClick(item.link, e, index)}
                 >
                   <Anchor<"a">
-                    href={item.link}
                     key={index}
                     variant="text"
                     className={
@@ -158,9 +165,6 @@ export function Header({}: Props) {
                         ? "text-blue-400 dark:text-blue-500"
                         : "text-gray-700 dark:text-white"
                     }
-                    onClick={() => {
-                      setActive(index);
-                    }}
                   >
                     {item.label}
                   </Anchor>
@@ -171,7 +175,7 @@ export function Header({}: Props) {
 
               <Menu.Label>Settings</Menu.Label>
               <Menu.Item
-                className="hover:bg-teal-200 focus:bg-teal-200 dark:text-white focus:dark:bg-gray-500 hover:dark:bg-gray-500 transition-colors duration-300 ease-in"
+                className="hover:bg-sky-200 focus:bg-sky-200 dark:text-white focus:dark:bg-gray-500 hover:dark:bg-gray-500 transition-colors duration-300 ease-in"
                 onClick={HandleChangeTheme}
                 icon={
                   theme === "dark" ? (

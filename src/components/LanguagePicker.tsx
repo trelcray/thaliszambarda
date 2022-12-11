@@ -19,7 +19,7 @@ export function LanguagePicker() {
 
   const items = data.map((item) => (
     <Menu.Item
-      className="dark:text-white hover:dark:bg-gray-600 hover:bg-teal-100 focus:dark:bg-gray-600"
+      className="w-[12.3rem] text-white hover:dark:bg-gray-600 hover:bg-blue-400 focus:dark:bg-gray-600"
       icon={
         <Image
           src={item.image}
@@ -45,7 +45,7 @@ export function LanguagePicker() {
       withArrow
     >
       <Menu.Target>
-        <UnstyledButton className="flex justify-between items-center py-3 px-4 gap-2 border-solid border rounded-md xl:w-52 dark:border-gray-200 border-gray-500 transition-colors duration-300 ease-in hover:dark:bg-gray-500 hover:bg-gray-100">
+        <UnstyledButton className="flex justify-between items-center py-3 px-4 gap-2 border-solid border rounded-md xl:w-52 dark:border-gray-200 border-gray-200 transition-colors duration-300 ease-in hover:dark:bg-gray-500 hover:bg-blue-400">
           <Group>
             <Image
               src={selected.image}
@@ -53,7 +53,7 @@ export function LanguagePicker() {
               height={22}
               alt="flag of language selected"
             />
-            <span className="font-medium text-sm dark:text-white hidden lg:inline">
+            <span className="font-medium text-sm text-white hidden lg:inline">
               {selected.label}
             </span>
           </Group>
@@ -61,14 +61,14 @@ export function LanguagePicker() {
             size={16}
             className={
               opened
-                ? "rotate-180 transform duration-150 ease-in dark:text-white"
-                : "rotate-0 transform duration-150 ease-in dark:text-white"
+                ? "rotate-180 transform duration-150 ease-in text-white"
+                : "rotate-0 transform duration-150 ease-in text-white"
             }
             stroke={3}
           />
         </UnstyledButton>
       </Menu.Target>
-      <Menu.Dropdown className="bg-transparent border-gray-500 dark:border-gray-200">
+      <Menu.Dropdown className="w-full bg-transparent border-gray-200 dark:border-gray-200">
         {items}
       </Menu.Dropdown>
     </Menu>
