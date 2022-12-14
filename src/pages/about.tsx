@@ -18,9 +18,9 @@ export function About({}: Props) {
   const birthDate = getAge("1999-04-29");
 
   return (
-    <div className="flex flex-col items-center justify-center gap-16 text-white min-h-screen">
+    <div className="flex flex-col mx-2 text-center lg:text-start items-center justify-center gap-16 text-white min-h-screen">
       <Title>About</Title>
-      <Box className="flex justify-evenly w-full">
+      <Box className="flex flex-col lg:flex-row items-center lg:justify-evenly w-full">
         <Text>imagem</Text>
         <section className="max-w-xl">
           <Title>Um pouco sobre mim:</Title>
@@ -46,7 +46,7 @@ export function About({}: Props) {
           </section>
         </section>
       </Box>
-      <Box className="flex items-center justify-around w-full">
+      <Box className="flex flex-wrap gap-2 items-center justify-around w-full">
       <Card className="hover:-translate-y-1 hover:scale-110">
           <Box className="flex gap-2">
             <IconPhoneCall />

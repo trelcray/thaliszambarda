@@ -1,11 +1,6 @@
 import { Badge, Box, Text, Timeline, Title } from "@mantine/core";
 import {
   IconBriefcase,
-  IconGitBranch,
-  IconGitCommit,
-  IconGitPullRequest,
-  IconMessageDots,
-  IconNetwork,
   IconSearch,
 } from "@tabler/icons";
 
@@ -21,12 +16,13 @@ export function Experiences({}: Props) {
         lineWidth={4}
         reverseActive
         color="indigo"
+        className="flex flex-col mx-2"
       >
         <Timeline.Item
           lineVariant="dashed"
           title="Searching a Job"
           bullet={<IconSearch size={28} />}
-          className="text-white pb-8"
+          className="flex text-white pb-8"
         >
           <Text size="xs" mt={4}>
             Now
@@ -46,7 +42,7 @@ export function Experiences({}: Props) {
             Mediação da aprendizagem online: novas possibilidades educativas
             apoiadas por tecnologias digitais
           </Text>
-          <Box className="flex gap-1" mt={6}>
+          <Box className="flex flex-wrap gap-1" mt={6}>
             <Badge>JAVASCRIPT</Badge>
             <Badge>REACT.JS</Badge>
             <Badge>NODE.JS</Badge>
@@ -72,7 +68,7 @@ export function Experiences({}: Props) {
             renovadoras dos processos de ensino e aprendizagem na educação e
             tecnologias
           </Text>
-          <Box className="flex gap-1" mt={6}>
+          <Box className="flex flex-wrap gap-1" mt={6}>
             <Badge>JAVASCRIPT</Badge>
             <Badge>REACT.JS</Badge>
             <Badge>NODE.JS</Badge>

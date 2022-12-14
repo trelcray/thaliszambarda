@@ -13,7 +13,7 @@ export function Home({}: Props) {
     delaySpeed: 3000,
   });
   return (
-    <div className="flex flex-col lg:flex-row justify-center md:ml-20 md:gap-2 items-center">
+    <div className="flex flex-col lg:flex-row justify-center md:ml-20 md:gap-2 items-center lg:pb-28 min-h-screen">
       <Box className="flex flex-col gap-10">
         <section className="flex flex-col gap-2 lg:gap-4 lg:w-96 text-center">
           <Text className="font-semibold text-xl md:text-3xl lg:text-4xl dark:text-blue-600 text-sky-800">
