@@ -68,7 +68,7 @@ export function LanguagePicker() {
           />
         </UnstyledButton>
       </Menu.Target>
-      <Menu.Dropdown className="w-full bg-transparent border-gray-200 dark:border-gray-200">
+      <Menu.Dropdown className="bg-transparent border-gray-200 dark:border-gray-200">
         {items}
       </Menu.Dropdown>
     </Menu>

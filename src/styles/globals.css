@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    @apply dark:bg-[url('/bg.png')] bg-[url('/white-bg.jpg')] bg-[#F3F9FF];
+    @apply dark:bg-gray-900 bg-slate-100;
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
 }

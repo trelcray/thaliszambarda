@@ -22,6 +22,7 @@ export function About({}: Props) {
       <Title>About</Title>
       <Box className="flex flex-col lg:flex-row items-center lg:justify-evenly w-full">
         <Text>imagem</Text>
+        <button>curriculo</button>
         <section className="max-w-xl">
           <Title>Um pouco sobre mim:</Title>
           <section className="flex flex-col gap-2 mt-2">

@@ -50,12 +50,12 @@ export function Header({ inView }: Props) {
       variant="text"
       className={
         index === active
-          ? "group uppercase text-sky-800 dark:text-blue-700 font-semibold transition-all duration-300 ease-in-out"
+          ? "group uppercase text-sky-800 dark:text-cyan-400 font-semibold transition-all duration-300 ease-in-out"
           : "group uppercase text-white transition-all duration-300 ease-in-out"
       }
       onClick={(e) => handleClick(item.link, e, index)}
     >
-      <span className="bg-left-bottom pb-2 bg-gradient-to-r from-blue-400 to-white dark:from-blue-500 dark:to-gray-900 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+      <span className="bg-left-bottom pb-2 bg-gradient-to-r from-blue-400 to-white dark:from-cyan-500 dark:to-gray-900 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
         {item.label}
       </span>
     </Anchor>
@@ -110,7 +110,7 @@ export function Header({ inView }: Props) {
         <section className="text-white uppercase text-xl space-x-2">
           <Title className="text-2xl xl:text-4xl">
             Thalis{" "}
-            <span className="dark:text-blue-700 text-sky-800">Zambarda</span>
+            <span className="dark:text-cyan-400 text-sky-800">Zambarda</span>
           </Title>
         </section>
         <Group className="xl:gap-6 hidden lg:flex">{items}</Group>
