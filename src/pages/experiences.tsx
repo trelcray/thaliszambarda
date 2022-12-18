@@ -1,8 +1,5 @@
 import { Badge, Box, Text, Timeline, Title } from "@mantine/core";
-import {
-  IconBriefcase,
-  IconSearch,
-} from "@tabler/icons";
+import { IconBriefcase, IconSearch } from "@tabler/icons";
 
 interface Props {}
 
@@ -15,15 +12,13 @@ export function Experiences({}: Props) {
         bulletSize={40}
         lineWidth={4}
         reverseActive
-        color="indigo"
-        className="flex flex-col mx-2"
-      >
+        color="cyan.4"
+        className="flex flex-col mx-2">
         <Timeline.Item
           lineVariant="dashed"
           title="Searching a Job"
           bullet={<IconSearch size={28} />}
-          className="flex text-white pb-8"
-        >
+          className="flex text-white pb-8">
           <Text size="xs" mt={4}>
             Now
           </Text>
@@ -32,8 +27,7 @@ export function Experiences({}: Props) {
           bullet={<IconBriefcase size={28} />}
           className="text-white pb-8"
           title="Front-End Developer"
-          align="left"
-        >
+          align="left">
           <Text color="dimmed" size="sm">
             FAPERGS
           </Text>
@@ -43,22 +37,21 @@ export function Experiences({}: Props) {
             apoiadas por tecnologias digitais
           </Text>
           <Box className="flex flex-wrap gap-1" mt={6}>
-            <Badge>JAVASCRIPT</Badge>
-            <Badge>REACT.JS</Badge>
-            <Badge>NODE.JS</Badge>
-            <Badge>SQL</Badge>
-            <Badge>HTML5</Badge>
-            <Badge>GIT</Badge>
-            <Badge>CSS3</Badge>
-            <Badge>Bootstrap</Badge>
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">JAVASCRIPT</Badge>
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">REACT.JS</Badge>
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">NODE.JS</Badge>
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">SQL</Badge>
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">HTML5</Badge>
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">GIT</Badge>
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">CSS3</Badge>
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">Bootstrap</Badge>
           </Box>
         </Timeline.Item>
         <Timeline.Item
           bullet={<IconBriefcase size={28} />}
           className="text-white"
           title="Front-End Developer"
-          align="left"
-        >
+          align="left">
           <Text color="dimmed" size="sm">
             FAPERGS
           </Text>
@@ -69,14 +62,14 @@ export function Experiences({}: Props) {
             tecnologias
           </Text>
           <Box className="flex flex-wrap gap-1" mt={6}>
-            <Badge>JAVASCRIPT</Badge>
-            <Badge>REACT.JS</Badge>
-            <Badge>NODE.JS</Badge>
-            <Badge>SQL</Badge>
-            <Badge>HTML5</Badge>
-            <Badge>GIT</Badge>
-            <Badge>CSS3</Badge>
-            <Badge>Bootstrap</Badge>
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">JAVASCRIPT</Badge>
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">REACT.JS</Badge>
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">NODE.JS</Badge>
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">SQL</Badge>
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">HTML5</Badge>
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">GIT</Badge>
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">CSS3</Badge>
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">Bootstrap</Badge>
           </Box>
         </Timeline.Item>
       </Timeline>
