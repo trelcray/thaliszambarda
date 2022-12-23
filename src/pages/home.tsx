@@ -19,11 +19,11 @@ export function Home({}: Props) {
           <Text className="font-semibold text-xl md:text-3xl lg:text-4xl dark:text-cyan-400 text-sky-800">
             Hello I{`'`}m,
           </Text>
-          <Title className="text-3xl md:text-5xl lg:text-6xl text-white">
+          <Title className="text-3xl md:text-5xl lg:text-6xl dark:text-white">
             {text}
             <Cursor />
           </Title>
-          <Text className="dark:text-gray-400 text-gray-300">
+          <Text className="dark:text-gray-400 text-gray-800">
             I Have a Degree in Systems Development
           </Text>
         </section>

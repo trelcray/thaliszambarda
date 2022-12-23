@@ -11,20 +11,20 @@ interface IFeaturedProjectProps {
 
 export function FeaturedProject({ description, title, children }: IFeaturedProjectProps) {
   return (
-    <Box className="flex flex-col gap-3 max-w-xs ">
-      <Title order={2}>Featured Project</Title>
-      <Flex>
+    <Box className="flex flex-col items-center justify-center gap-3 max-w-xs">
+      <Title order={4}>Featured Project</Title>
+      <Flex className="justify-around w-full">
         <div className="bg-white w-44 h-28"></div>
-        <Flex className="gap-2 mx-4 flex-wrap">
+        <Flex className="gap-6 justify-evenly max-w-[8rem] flex-wrap">
           {children}
         </Flex>
       </Flex>
-      <Title order={3}>{title}</Title>
+      <Title order={5}>{title}</Title>
       <Text className="text-xs">{description}</Text>
-      <Flex className="justify-around">
-        <Button>Github Code</Button>
+      <Flex className="justify-around w-full">
+        <Button className="text-xs md:text-base">Github Code</Button>
         <Button className="bg-cyan-400 border-cyan-400 dark:hover:bg-cyan-500 dark:hover:border-cyan-500">
-          <p className="text-white">View Project</p>
+          <p className="text-white text-xs md:text-base">View Project</p>
         </Button>
       </Flex>
     </Box>

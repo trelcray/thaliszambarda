@@ -51,11 +51,11 @@ export function Header({ inView }: Props) {
       className={
         index === active
           ? "group uppercase text-sky-800 dark:text-cyan-400 font-semibold transition-all duration-300 ease-in-out"
-          : "group uppercase text-white transition-all duration-300 ease-in-out"
+          : "group uppercase dark:text-white transition-all duration-300 ease-in-out"
       }
       onClick={(e) => handleClick(item.link, e, index)}
     >
-      <span className="bg-left-bottom pb-2 bg-gradient-to-r from-blue-400 to-white dark:from-cyan-500 dark:to-gray-900 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+      <span className="bg-left-bottom pb-2 bg-gradient-to-r from-blue-400 to-white dark:from-cyan-400 dark:to-gray-900 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
         {item.label}
       </span>
     </Anchor>
@@ -98,7 +98,7 @@ export function Header({ inView }: Props) {
     <PrimitiveHeader
       className={
         navbar
-          ? "sticky border-0 top-0 bg-opacity-20 dark:bg-opacity-20 bg-sky-50 dark:bg-gray-700 z-50"
+          ? "sticky border-0 top-0 bg-opacity-20 dark:bg-opacity-20 bg-sky-300 dark:bg-gray-700 z-50"
           : "border-b-0 py-14 bg-transparent h-24"
       }
       height={70}
@@ -107,7 +107,7 @@ export function Header({ inView }: Props) {
         className="flex justify-between mx-2 lg:mx-2 items-center h-full"
         fluid
       >
-        <section className="text-white uppercase text-xl space-x-2">
+        <section className="dark:text-white uppercase text-xl space-x-2">
           <Title className="text-2xl xl:text-4xl">
             Thalis{" "}
             <span className="dark:text-cyan-400 text-sky-800">Zambarda</span>
@@ -118,7 +118,7 @@ export function Header({ inView }: Props) {
           <Group className="hidden lg:flex">
             <ActionIcon
               variant="outline"
-              className="rounded-full border-gray-200 dark:border-gray-300 dark:text-yellow-500 text-sky-800"
+              className="rounded-full border-gray-500 dark:border-gray-300 dark:text-yellow-500 text-sky-800"
               onClick={() => toggleColorScheme()}
               title="Toggle color scheme"
             >
@@ -154,7 +154,7 @@ export function Header({ inView }: Props) {
               {data.map((item, index) => (
                 <Menu.Item
                   key={index}
-                  className="focus:bg-sky-200 hover:bg-sky-200 dark:text-white focus:dark:bg-gray-500 hover:dark:bg-gray-500 transition-colors duration-300 ease-in"
+                  className="focus:bg-sky-200 hover:bg-sky-200 dark:dark: focus:dark:bg-gray-500 hover:dark:bg-gray-500 transition-colors duration-300 ease-in"
                   onClick={(e: FormEvent) => handleClick(item.link, e, index)}
                 >
                   <Anchor<"a">
@@ -163,7 +163,7 @@ export function Header({ inView }: Props) {
                     className={
                       index === active
                         ? "text-blue-400 dark:text-blue-500"
-                        : "text-gray-700 dark:text-white"
+                        : "text-gray-700 dark:dark:"
                     }
                   >
                     {item.label}
@@ -175,7 +175,7 @@ export function Header({ inView }: Props) {
 
               <Menu.Label>Settings</Menu.Label>
               <Menu.Item
-                className="hover:bg-sky-200 focus:bg-sky-200 dark:text-white focus:dark:bg-gray-500 hover:dark:bg-gray-500 transition-colors duration-300 ease-in"
+                className="hover:bg-sky-200 focus:bg-sky-200 dark:dark: focus:dark:bg-gray-500 hover:dark:bg-gray-500 transition-colors duration-300 ease-in"
                 onClick={HandleChangeTheme}
                 icon={
                   theme === "dark" ? (
