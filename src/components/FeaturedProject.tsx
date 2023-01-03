@@ -11,7 +11,7 @@ interface IFeaturedProjectProps {
 
 export function FeaturedProject({ description, title, children }: IFeaturedProjectProps) {
   return (
-    <Box className="flex flex-col items-center justify-center gap-3 max-w-xs">
+    <Box className="flex flex-col w-full items-center justify-center gap-3 max-w-xs">
       <Title order={4}>Featured Project</Title>
       <Flex className="justify-around w-full">
         <div className="bg-white w-44 h-28"></div>

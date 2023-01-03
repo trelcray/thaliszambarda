@@ -13,7 +13,7 @@ export function Experiences({}: Props) {
         lineWidth={4}
         reverseActive
         color="cyan.4"
-        className="flex flex-col mx-2">
+        className="flex flex-col mx-2 max-w-lg">
         <Timeline.Item
           lineVariant="dashed"
           title="Searching a Job"

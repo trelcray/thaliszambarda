@@ -1,5 +1,5 @@
 import { Box, Flex, Tabs, Text, Title } from "@mantine/core";
-import { IconAppWindow, TablerIconProps } from "@tabler/icons";
+import { TablerIconProps } from "@tabler/icons";
 import {
   BackEnd,
   Design,
@@ -41,8 +41,8 @@ export function Skills({}: Props) {
         onTabChange={setActiveTab}
         unstyled
         orientation="vertical"
-        className="flex flex-col mt-5 lg:flex-row w-full lg:justify-between">
-        <Tabs.List className="flex lg:mt-2 lg:flex-col items-center lg:items-start justify-center h-full w-full lg:w-56">
+        className="flex flex-col lg:min-h-[19rem] mt-5 lg:flex-row w-full justify-center items-center lg:items-start lg:justify-between">
+        <Tabs.List className="flex lg:flex-col items-center lg:items-start lg:w-48">
           {TabSkills?.map((skill, i) => (
             <Tabs.Tab
               key={i}
@@ -62,11 +62,11 @@ export function Skills({}: Props) {
           ))}
         </Tabs.List>
 
-        <Tabs.Panel className="w-full" value="frontEnd">
-          <Flex className="flex-col lg:flex-row items-center lg:items-start justify-center gap-10 lg:gap-10 mt-5 lg:mt-0 w-full lg:justify-between">
-            <Box className="flex flex-col items-center justify-center gap-4">
+        <Tabs.Panel className="w-full lg:w-4/5" value="frontEnd">
+          <Flex className="flex-col items-center mt-5 gap-5 lg:mt-0 lg:gap-0 lg:flex-row w-full justify-between lg:items-start">
+            <Box className="flex flex-col gap-4 items-center">
               <Title order={4}>Technologies in use</Title>
-              <Flex className="gap-2 lg:gap-4 text-xs xl:text-base items-center w-full justify-evenly sm:mx-10 lg:max-w-[16rem] xl:max-w-xs flex-wrap">
+              <Flex className="gap-2 lg:gap-4 text-xs xl:text-base items-center w-full justify-evenly lg:max-w-[16rem] xl:max-w-xs flex-wrap">
                 {FrontEnd?.map((skill, i) => (
                   <SkillCard
                     key={i}
@@ -80,7 +80,7 @@ export function Skills({}: Props) {
             </Box>
             <Box className="flex flex-col items-center justify-center gap-4">
               <Title order={4}>In Study</Title>
-              <Flex className="gap-2 lg:gap-4 text-xs xl:text-base items-center justify-evenly  lg:max-w-xs flex-wrap">
+              <Flex className="gap-2 lg:gap-4 text-xs xl:text-base items-center justify-evenly  lg:max-w-[15rem] flex-wrap">
                 {StudyFrontEnd?.map((skill, i) => (
                   <SkillCard
                     key={i}
@@ -114,11 +114,11 @@ export function Skills({}: Props) {
           </Flex>
         </Tabs.Panel>
 
-        <Tabs.Panel className="w-full" value="backEnd">
-          <Flex className="flex-col lg:flex-row items-center justify-center gap-6 mt-5 lg:mt-0 w-full lg:justify-evenly">
-            <Box className="flex flex-col items-center justify-center gap-4">
+        <Tabs.Panel className="w-full lg:w-4/5" value="backEnd">
+          <Flex className="flex-col items-center mt-5 gap-5 lg:mt-0 lg:gap-0 lg:flex-row w-full justify-between lg:items-start">
+            <Box className="flex flex-col gap-4 items-center">
               <Title order={4}>Technologies in use</Title>
-              <Flex className="gap-4 text-xs items-center justify-between sm:mx-10 lg:max-w-xs flex-wrap">
+              <Flex className="gap-2 lg:gap-4 text-xs xl:text-base items-center w-full justify-evenly lg:max-w-[16rem] xl:max-w-xs flex-wrap">
                 {BackEnd?.map((skill, i) => (
                   <SkillCard
                     key={i}
@@ -132,7 +132,7 @@ export function Skills({}: Props) {
             </Box>
             <Box className="flex flex-col items-center justify-center gap-4">
               <Title order={4}>In Study</Title>
-              <Flex className="gap-4 text-xs items-center justify-center lg:max-w-[16rem] flex-wrap">
+              <Flex className="gap-2 lg:gap-4 text-xs xl:text-base items-center justify-evenly  lg:max-w-[15rem] flex-wrap">
                 {StudyBackEnd?.map((skill, i) => (
                   <SkillCard
                     key={i}
@@ -166,9 +166,9 @@ export function Skills({}: Props) {
           </Flex>
         </Tabs.Panel>
 
-        <Tabs.Panel className="w-3/5" value="design">
-          <Flex className="justify-between mr-[3.1rem]">
-            <Box className="flex flex-col gap-4">
+        <Tabs.Panel className="w-full lg:w-5/6" value="design">
+          <Flex className="w-full flex-col lg:flex-row gap-5 lg:gap-0 mt-5 lg:mt-0 items-center lg:items-start justify-between">
+            <Box className="flex flex-col gap-4 w-full items-center">
               <Title order={4}>Technologies in use</Title>
               <Flex className="gap-4 max-w-[16rem] flex-wrap">
                 {Design?.map((skill, i) => (
@@ -194,9 +194,9 @@ export function Skills({}: Props) {
           </Flex>
         </Tabs.Panel>
 
-        <Tabs.Panel className="w-full" value="utilities">
-          <Flex className="justify-around w-full ml-9">
-            <Box className="flex flex-col gap-4">
+        <Tabs.Panel className="w-full lg:w-3/4" value="utilities">
+          <Flex className="flex-col lg:flex-row gap-5 lg:gap-0 mt-5 lg:mt-0 w-full items-center lg:items-start justify-between">
+            <Box className="flex flex-col gap-4 items-center">
               <Title order={4}>Technologies in use</Title>
               <Flex className="gap-4 max-w-xs flex-wrap">
                 {Utilities?.map((skill, i) => (
@@ -210,7 +210,7 @@ export function Skills({}: Props) {
                 ))}
               </Flex>
             </Box>
-            <Box className="flex flex-col gap-4">
+            <Box className="flex flex-col items-center gap-4">
               <Title order={4}>In Study</Title>
               <Flex className="gap-4 max-w-[16rem] flex-wrap">
                 {StudyUtilities?.map((skill, i) => (

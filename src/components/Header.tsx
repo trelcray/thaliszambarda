@@ -11,13 +11,14 @@ import {
 } from "@mantine/core";
 import { useLocalStorage } from "@mantine/hooks";
 import { IconSun, IconMoonStars } from "@tabler/icons";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, memo, useEffect, useState } from "react";
 import { LanguagePicker } from "./LanguagePicker";
 
 interface Props {
   inView: number;
 }
 
+// Use data in a more appropriate place
 const data = [
   { label: "Home", link: "home" },
   { label: "About", link: "about" },
@@ -27,7 +28,7 @@ const data = [
   { label: "Contact", link: "contact" },
 ];
 
-export function Header({ inView }: Props) {
+export const Header = memo(({ inView }: Props) => {
   const [theme, setTheme] = useLocalStorage<ColorScheme>({
     key: "mantine-color-scheme",
     defaultValue: "light",
@@ -53,8 +54,7 @@ export function Header({ inView }: Props) {
           ? "group uppercase text-sky-800 dark:text-cyan-400 font-semibold transition-all duration-300 ease-in-out"
           : "group uppercase dark:text-white transition-all duration-300 ease-in-out"
       }
-      onClick={(e) => handleClick(item.link, e, index)}
-    >
+      onClick={(e) => handleClick(item.link, e, index)}>
       <span className="bg-left-bottom pb-2 bg-gradient-to-r from-blue-400 to-white dark:from-cyan-400 dark:to-gray-900 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
         {item.label}
       </span>
@@ -70,6 +70,7 @@ export function Header({ inView }: Props) {
     }
   };
 
+  // Refactor toggle color scheme logic into separate function
   function toggleColorScheme() {
     setTheme(theme === "dark" ? "light" : "dark");
   }
@@ -101,12 +102,10 @@ export function Header({ inView }: Props) {
           ? "sticky border-0 top-0 bg-opacity-20 dark:bg-opacity-20 bg-sky-300 dark:bg-gray-700 z-50"
           : "border-b-0 py-14 bg-transparent h-24"
       }
-      height={70}
-    >
+      height={70}>
       <Container
         className="flex justify-between mx-2 lg:mx-2 items-center h-full"
-        fluid
-      >
+        fluid>
         <section className="dark:text-white uppercase text-xl space-x-2">
           <Title className="text-2xl xl:text-4xl">
             Thalis{" "}
@@ -120,8 +119,7 @@ export function Header({ inView }: Props) {
               variant="outline"
               className="rounded-full border-gray-500 dark:border-gray-300 dark:text-yellow-500 text-sky-800"
               onClick={() => toggleColorScheme()}
-              title="Toggle color scheme"
-            >
+              title="Toggle color scheme">
               {theme === "dark" ? (
                 <IconSun size={18} />
               ) : (
@@ -138,14 +136,9 @@ export function Header({ inView }: Props) {
             position="bottom-end"
             withArrow
             onOpen={() => setOpened(true)}
-            onClose={() => setOpened(false)}
-          >
+            onClose={() => setOpened(false)}>
             <Menu.Target>
-              <Burger
-                className="lg:hidden"
-                color="white"
-                opened={opened}
-              />
+              <Burger className="lg:hidden" color="white" opened={opened} />
             </Menu.Target>
 
             <Menu.Dropdown className="lg:hidden bg-sky-100/95 dark:bg-gray-700">
@@ -155,8 +148,7 @@ export function Header({ inView }: Props) {
                 <Menu.Item
                   key={index}
                   className="focus:bg-sky-200 hover:bg-sky-200 dark:dark: focus:dark:bg-gray-500 hover:dark:bg-gray-500 transition-colors duration-300 ease-in"
-                  onClick={(e: FormEvent) => handleClick(item.link, e, index)}
-                >
+                  onClick={(e: FormEvent) => handleClick(item.link, e, index)}>
                   <Anchor<"a">
                     key={index}
                     variant="text"
@@ -164,8 +156,7 @@ export function Header({ inView }: Props) {
                       index === active
                         ? "text-blue-400 dark:text-blue-500"
                         : "text-gray-700 dark:dark:"
-                    }
-                  >
+                    }>
                     {item.label}
                   </Anchor>
                 </Menu.Item>
@@ -183,8 +174,7 @@ export function Header({ inView }: Props) {
                   ) : (
                     <IconMoonStars className="border rounded-full border-gray-300 h-6 w-6 p-1 text-blue-500" />
                   )
-                }
-              >
+                }>
                 {theme === "dark" ? "Dark Mode" : "Light Mode"}
               </Menu.Item>
             </Menu.Dropdown>
@@ -193,4 +183,6 @@ export function Header({ inView }: Props) {
       </Container>
     </PrimitiveHeader>
   );
-}
+});
+
+Header.displayName = "Header";

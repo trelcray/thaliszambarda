@@ -16,7 +16,7 @@ import figma from "../assets/figma.svg";
 import redux from "../assets/redux.svg";
 import jest from "../assets/jest.svg";
 
-import { IconAppWindow, IconDatabase, IconTool, IconTools, TablerIconProps } from "@tabler/icons";
+import { IconAppWindow, IconAt, IconDatabase, IconMapPin, IconPhoneCall, IconSunLow, IconTool, IconTools, TablerIconProps } from "@tabler/icons";
 import { FunctionComponent } from "react";
 
 export interface IDataProps {
@@ -26,7 +26,12 @@ export interface IDataProps {
   className: string;
 }
 
-export interface ITabSkillsProps extends TablerIconProps {
+export interface ITabSkillsProps {
+  value: string;
+  icon: FunctionComponent;
+  title: string;
+}
+export interface IContactInfoProps {
   value: string;
   icon: FunctionComponent;
   title: string;
@@ -129,7 +134,7 @@ export const StudyBackEnd: IDataProps[] = [
     skillImage: typescript,
     title: "Typescript",
     alt: "Typescript logo image",
-    className: "w-full h-full "
+    className: "w-full h-full"
   },
   {
     skillImage: mongo,
@@ -144,7 +149,7 @@ export const Design: IDataProps[] = [
     skillImage: figma,
     title: "Figma",
     alt: "Figma logo image",
-    className: "w-full h-full p-2 xl:p-3"
+    className: "w-full h-full p-2"
   }
 ]
 
@@ -186,5 +191,29 @@ export const TabSkills: ITabSkillsProps[] = [
     title: "Utilities",
     icon: IconTool,
     value: "utilities"
+  },
+]
+
+
+export const contactInfo: IContactInfoProps[] = [
+  {
+    title: "Email",
+    icon: IconAt,
+    value: "thaliszambarda@gmail.com"
+  },
+  {
+    title: "Phone",
+    icon: IconPhoneCall,
+    value: "+55 (53) 999675436"
+  },
+  {
+    title: "Address",
+    icon: IconMapPin,
+    value: "Candiota-RS"
+  },
+  {
+    title: "Working Hours",
+    icon: IconSunLow,
+    value: "08 a.m.- 08 p.m."
   },
 ]
