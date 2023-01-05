@@ -6,11 +6,13 @@ interface IButtonProps extends ButtonProps {
   children: ReactNode;
   className?: string;
   icon?: ReactNode;
+  type?: "submit" | "button" | "reset";
 }
 
-export function Button({ children, icon, className }: IButtonProps) {
+export function Button({ children, icon, className, type }: IButtonProps) {
   return (
     <PrimitiveButton
+      type={type}
       leftIcon={icon}
       className={clsx("rounded border-2 dark:text-cyan-400 text-sky-800 dark:border-cyan-400 border-sky-800 hover:bg-blue-300/40 dark:hover:bg-cyan-200/10 hover:border-sky-900 hover:text-sky-900", className)}
       variant="outline"
