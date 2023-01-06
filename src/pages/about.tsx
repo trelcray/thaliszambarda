@@ -18,7 +18,7 @@ export function About({}: Props) {
   const birthDate = getAge("1999-04-29");
 
   return (
-    <div className="flex flex-col mx-2 text-center lg:text-start items-center justify-center gap-16 dark:text-white min-h-screen">
+    <div className="flex flex-col mx-2 text-center lg:text-start items-center justify-center gap-5 dark:text-white min-h-screen">
       <Title>About</Title>
       <Box className="flex flex-col lg:flex-row items-center lg:justify-evenly w-full">
         <Text>imagem</Text>

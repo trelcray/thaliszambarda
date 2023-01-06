@@ -1,5 +1,17 @@
-import { Group, Text, Textarea, Title } from "@mantine/core";
-import { TablerIconProps } from "@tabler/icons";
+import {
+  ActionIcon,
+  Anchor,
+  Group,
+  Text,
+  Textarea,
+  Title,
+} from "@mantine/core";
+import {
+  IconBrandGithub,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  TablerIconProps,
+} from "@tabler/icons";
 import { FormEvent, FunctionComponent, useRef } from "react";
 import { Button } from "../components/Button";
 import { TextInput } from "../components/TextInput";
@@ -42,8 +54,8 @@ export function Contact({}: Props) {
     }
   };
   return (
-    <div className="flex flex-col gap-16 mx-5 justify-center items-center min-h-screen">
-      <Title className="text-white">Contact</Title>
+    <div className="flex flex-col gap-5 mx-5 justify-center items-center min-h-screen">
+      <Title className="text-white lg:mt-16">Contact</Title>
       <div className="flex flex-col md:flex-row justify-evenly w-full text-white">
         <div className="bg-cyan-500 rounded-xl p-6">
           <Title order={4} className="text-white">
@@ -68,7 +80,7 @@ export function Contact({}: Props) {
             Get in touch
           </Title>
 
-          <div className="flex flex-col gap-3 w-full md:min-w-[20rem] mt-10">
+          <div className="flex flex-col gap-3 w-full md:min-w-[25rem] mt-10">
             <TextInput
               label="Your email"
               placeholder="johndoe@gmail.com"
@@ -80,7 +92,7 @@ export function Contact({}: Props) {
             <Textarea
               label="Your message"
               placeholder="Please include all relevant information"
-              className="[&>div>textarea]:w-full [&>div>textarea]:bg-gray-800 [&>div>textarea]:border [&>div>textarea]:border-gray-800 hover:[&>div>textarea]:border-cyan-400 focus:[&>div>textarea]:border-cyan-400 [&>div>textarea]:outline-none [&>div>textarea]:rounded [&>div>textarea]:p-2 text-white [&>label>span]:text-red-500"
+              className="[&>div>textarea]:w-full [&>div>textarea]:bg-gray-800 [&>div>textarea]:border [&>div>textarea]:border-gray-800 hover:[&>div>textarea]:border-cyan-400 focus:[&>div>textarea]:border-cyan-400 [&>div>textarea]:outline-none [&>div>textarea]:rounded [&>div>textarea]:px-2 [&>div>textarea]:pb-10  text-white [&>label>span]:text-red-500"
               unstyled
               name="message"
               minRows={3}
@@ -91,6 +103,47 @@ export function Contact({}: Props) {
             </Group>
           </div>
         </form>
+      </div>
+      <div className="flex justify-between items-center w-full border-t border-gray-500 py-8 gap-8">
+        <Group spacing="xs" position="right" noWrap>
+          <Anchor
+            href="https://www.linkedin.com/in/thalis-zambarda"
+            target="_blank">
+            <ActionIcon
+              className="bg-transparent hover:bg-gray-800 border-gray-500"
+              size="lg"
+              variant="default"
+              radius="xl">
+              <IconBrandLinkedin color="white" size={24} stroke={1.5} />
+            </ActionIcon>
+          </Anchor>
+          <Anchor
+            href="https://github.com/trelcray"
+            target="_blank">
+            <ActionIcon
+              className="bg-transparent hover:bg-gray-800 border-gray-500"
+              size="lg"
+              variant="default"
+              radius="xl">
+              <IconBrandGithub color="white" size={24} stroke={1.5} />
+            </ActionIcon>
+          </Anchor>
+
+          <Anchor
+            href="https://www.instagram.com/thaliszambarda"
+            target="_blank">
+            <ActionIcon
+              className="bg-transparent hover:bg-gray-800 border-gray-500"
+              size="lg"
+              variant="default"
+              radius="xl">
+              <IconBrandInstagram color="white" size={24} stroke={1.5} />
+            </ActionIcon>
+          </Anchor>
+        </Group>
+        <Text color="dimmed" size="sm">
+          © 2023 Thalis Zambarda. All rights reserved.
+        </Text>
       </div>
     </div>
   );

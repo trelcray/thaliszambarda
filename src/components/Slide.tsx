@@ -13,7 +13,7 @@ export function Slide({}: Props) {
           width={1}
           height={1}
           quality={100}
-          src="/cartoon.svg"
+          src="/bg-illustration.svg"
           alt="developer cartoon"
         />
         <div className="hidded duration-500 ease-in-out hidden text-center w-full text-white md:w-1/2 justify-end">

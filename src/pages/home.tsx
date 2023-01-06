@@ -30,11 +30,11 @@ export function Home({}: Props) {
         <Button icon={<IconRubberStamp size={20} />}>Hire Me</Button>
       </Box>
       <Image
-        className="bg-cover w-[45rem] h-[28rem]"
+        className="bg-cover w-[45rem] h-[35rem]"
         width={500}
         height={500}
         quality={100}
-        src="/cartoon.svg"
+        src="/bg-illustration.svg"
         alt="developer cartoon"
       />
     </div>

@@ -5,8 +5,8 @@ interface Props {}
 
 export function Experiences({}: Props) {
   return (
-    <div className="flex flex-col justify-center items-center dark:text-white gap-16 min-h-screen">
-      <Title>Experiences</Title>
+    <div className="flex flex-col justify-center items-center dark:text-white gap-5 min-h-screen">
+      <Title className="lg:mt-4">Experiences</Title>
       <Timeline
         active={1}
         bulletSize={40}

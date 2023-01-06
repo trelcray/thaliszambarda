@@ -34,8 +34,8 @@ export function Skills({}: Props) {
   const [activeTab, setActiveTab] = useState<string | null>("frontEnd");
 
   return (
-    <div className="flex flex-col justify-center items-center mx-10 lg:mx-3 xl:mx-10 text-white lg:gap-16 min-h-screen">
-      <Title>Skills</Title>
+    <div className="flex flex-col justify-center lg:justify-start items-center mx-10 lg:mx-3 xl:mx-10 text-white lg:gap-5 min-h-screen">
+      <Title className="lg:mt-[4.2rem]">Skills</Title>
       <Tabs
         value={activeTab}
         onTabChange={setActiveTab}

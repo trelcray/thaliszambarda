@@ -23,16 +23,16 @@ export function Projects({}: Props) {
   }, [embla, handleScroll]);
 
   return (
-    <div className="flex flex-col gap-16 justify-center items-center min-h-screen">
-      <Title className="text-white">Projects</Title>
-      <Box>
+    <div className="flex flex-col justify-center items-center mx-2 lg:mx-3 xl:mx-10 text-white lg:gap-16 min-h-screen">
+      <Title className="text-white mt-6">Projects</Title>
+      <Box className="xl:w-full">
         <Carousel
           dragFree
           slideGap="md"
-          height={300}
-          className="[&>div>button]:text-cyan-400 [&>div>button]:border-white w-96 sm:w-full"
+          height={400}
+          className="[&>div>button]:text-cyan-400 [&>div>button]:border-white w-[21rem] xl:w-96 sm:w-full"
           getEmblaApi={setEmbla}
-          initialSlide={2}>
+          initialSlide={0}>
           <Carousel.Slide className="[&>div>div>.hidded]:hover:flex [&>div>div>.hidded]:hover:duration-500 [&>div>div>.hidded]:hover:ease-in-out [&>div>div>.buttons]:hover:justify-around [&>div>div>.info]:hover:justify-around [&>div>div>.hidded]:py-3 [&>div>div>div>button]:hover:flex md:[&>div>div>img]:hover:scale-50 max-w-lg">
             <Slide />
           </Carousel.Slide>
