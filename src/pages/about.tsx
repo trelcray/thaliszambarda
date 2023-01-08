@@ -1,5 +1,6 @@
-import { Box, Card, Text, Title } from "@mantine/core";
-import { IconPhoneCall, IconCake, IconMapPin } from "@tabler/icons";
+import { Anchor, Box, Card, Text, Title } from "@mantine/core";
+import { IconCake, IconArrowBarToDown } from "@tabler/icons";
+import Image from "next/image";
 
 interface Props {}
 
@@ -18,11 +19,17 @@ export function About({}: Props) {
   const birthDate = getAge("1999-04-29");
 
   return (
-    <div className="flex flex-col mx-2 text-center lg:text-start items-center justify-center gap-5 dark:text-white min-h-screen">
-      <Title>About</Title>
+    <div className="flex flex-col mx-2 text-center lg:text-start items-center justify-center gap-10 dark:text-white min-h-screen">
+      <Title className="lg:mt-16">About</Title>
       <Box className="flex flex-col lg:flex-row items-center lg:justify-evenly w-full">
-        <Text>imagem</Text>
-        <button>curriculo</button>
+        <Image
+          src="/eu.jpeg"
+          alt="my image"
+          className="h-96 w-96 rounded-lg"
+          width={400}
+          height={400}
+          quality={100}
+        />
         <section className="max-w-xl">
           <Title>Um pouco sobre mim:</Title>
           <section className="flex flex-col gap-2 mt-2">
@@ -48,26 +55,21 @@ export function About({}: Props) {
         </section>
       </Box>
       <Box className="flex flex-wrap gap-2 items-center justify-around w-full">
-      <Card className="hover:-translate-y-1 hover:scale-110">
+        <Anchor href="curriculo.pdf" target="_blank" className="no-underline">
+        <Card className="hover:-translate-y-1 hover:scale-110 cursor-pointer">
           <Box className="flex gap-2">
-            <IconPhoneCall />
-            <Text > Phone:</Text>
+            <IconArrowBarToDown />
+            <Text> Resume:</Text>
           </Box>
-          <Text className="font-semibold">55+ (53)99967-5436</Text>
+          <Text className="font-semibold">Click to open</Text>
         </Card>
+        </Anchor>
         <Card className="hover:-translate-y-1 hover:scale-110">
           <Box className="flex gap-2">
             <IconCake />
             <Text>Birth:</Text>
           </Box>
           <Text className="font-semibold">April, 1999 ({birthDate} years)</Text>
-        </Card>
-        <Card className="hover:-translate-y-1 hover:scale-110">
-          <Box className="flex gap-2">
-            <IconMapPin />
-            <Text>From:</Text>
-          </Box>
-          <Text className="font-semibold">Candiota, RS</Text>
         </Card>
       </Box>
     </div>

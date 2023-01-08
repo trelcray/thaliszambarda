@@ -28,9 +28,10 @@ export function Projects({}: Props) {
       <Box className="xl:w-full">
         <Carousel
           dragFree
+          align="center"
           slideGap="md"
           height={400}
-          className="[&>div>button]:text-cyan-400 [&>div>button]:border-white w-[21rem] xl:w-96 sm:w-full"
+          className="[&>div>button]:text-cyan-400 [&>div>button]:border-white w-[21rem] sm:w-full"
           getEmblaApi={setEmbla}
           initialSlide={0}>
           <Carousel.Slide className="[&>div>div>.hidded]:hover:flex [&>div>div>.hidded]:hover:duration-500 [&>div>div>.hidded]:hover:ease-in-out [&>div>div>.buttons]:hover:justify-around [&>div>div>.info]:hover:justify-around [&>div>div>.hidded]:py-3 [&>div>div>div>button]:hover:flex md:[&>div>div>img]:hover:scale-50 max-w-lg">

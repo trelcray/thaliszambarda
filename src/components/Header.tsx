@@ -142,12 +142,12 @@ export const Header = memo(({ inView }: Props) => {
             </Menu.Target>
 
             <Menu.Dropdown className="lg:hidden bg-sky-100/95 dark:bg-gray-700">
-              <Menu.Label>Navigation</Menu.Label>
+              <Menu.Label >Navigation</Menu.Label>
 
               {data.map((item, index) => (
                 <Menu.Item
                   key={index}
-                  className="focus:bg-sky-200 hover:bg-sky-200 dark:dark: focus:dark:bg-gray-500 hover:dark:bg-gray-500 transition-colors duration-300 ease-in"
+                  className="focus:bg-sky-200 hover:bg-sky-200 focus:dark:bg-gray-500 hover:dark:bg-gray-500 transition-colors duration-300 ease-in"
                   onClick={(e: FormEvent) => handleClick(item.link, e, index)}>
                   <Anchor<"a">
                     key={index}
@@ -155,7 +155,7 @@ export const Header = memo(({ inView }: Props) => {
                     className={
                       index === active
                         ? "text-blue-400 dark:text-blue-500"
-                        : "text-gray-700 dark:dark:"
+                        : "text-gray-700 dark:text-white"
                     }>
                     {item.label}
                   </Anchor>
@@ -166,7 +166,7 @@ export const Header = memo(({ inView }: Props) => {
 
               <Menu.Label>Settings</Menu.Label>
               <Menu.Item
-                className="hover:bg-sky-200 focus:bg-sky-200 dark:dark: focus:dark:bg-gray-500 hover:dark:bg-gray-500 transition-colors duration-300 ease-in"
+                className=" dark:text-white hover:bg-sky-200 focus:bg-sky-200 dark:dark: focus:dark:bg-gray-500 hover:dark:bg-gray-500 transition-colors duration-300 ease-in"
                 onClick={HandleChangeTheme}
                 icon={
                   theme === "dark" ? (
