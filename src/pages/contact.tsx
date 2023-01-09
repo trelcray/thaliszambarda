@@ -2,6 +2,7 @@ import {
   ActionIcon,
   Anchor,
   Group,
+  Notification,
   Text,
   Textarea,
   Title,
@@ -10,9 +11,11 @@ import {
   IconBrandGithub,
   IconBrandInstagram,
   IconBrandLinkedin,
+  IconCheck,
+  IconX,
   TablerIconProps,
 } from "@tabler/icons";
-import { FormEvent, FunctionComponent, useRef } from "react";
+import { FormEvent, FunctionComponent, useRef, useState } from "react";
 import { Button } from "../components/Button";
 import { TextInput } from "../components/TextInput";
 import { contactInfo } from "../utils/data";
@@ -25,6 +28,10 @@ interface IIconsProps extends TablerIconProps {
 }
 
 export function Contact({}: Props) {
+  const [isHiddenSuccess, setIsHiddenSuccess] = useState(true);
+  const [isHiddenError, setIsHiddenError] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+
   const form = useRef<HTMLFormElement>(null);
 
   function Icons({ icon, ...props }: IIconsProps) {
@@ -34,6 +41,7 @@ export function Contact({}: Props) {
 
   const handleSendEmail = (e: FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
     const formElement = form.current;
     if (formElement) {
       emailjs
@@ -44,17 +52,27 @@ export function Contact({}: Props) {
           "Z0gJP5BI08pXxXmXE"
         )
         .then(
-          (result) => {
-            alert(result.text);
+          () => {
+            setIsHiddenSuccess(false);
+            setTimeout(() => {
+              setIsHiddenSuccess(true);
+            }, 3000);
+            setIsLoading(false);
+            formElement.reset();
           },
-          (error) => {
-            alert(error.text);
+          () => {
+            setIsHiddenError(false);
+            setTimeout(() => {
+              setIsHiddenError(true);
+            }, 3000);
+            setIsLoading(false);
+            formElement.reset();
           }
         );
     }
   };
   return (
-    <div className="flex flex-col gap-5 mx-5 justify-center items-center min-h-screen">
+    <div className="relative flex flex-col gap-5 mx-5 justify-center items-center min-h-screen">
       <Title className="text-white lg:mt-16">Contact</Title>
       <div className="flex flex-col md:flex-row justify-evenly w-full text-white">
         <div className="bg-cyan-500 rounded-xl p-6">
@@ -99,7 +117,9 @@ export function Contact({}: Props) {
               required
             />
             <Group position="right">
-              <Button type="submit">Send message</Button>
+              <Button type="submit" loading={isLoading}>
+                Send message
+              </Button>
             </Group>
           </div>
         </form>
@@ -117,9 +137,7 @@ export function Contact({}: Props) {
               <IconBrandLinkedin color="white" size={24} stroke={1.5} />
             </ActionIcon>
           </Anchor>
-          <Anchor
-            href="https://github.com/trelcray"
-            target="_blank">
+          <Anchor href="https://github.com/trelcray" target="_blank">
             <ActionIcon
               className="bg-transparent hover:bg-gray-800 border-gray-500"
               size="lg"
@@ -145,6 +163,23 @@ export function Contact({}: Props) {
           © 2023 Thalis Zambarda. All rights reserved.
         </Text>
       </div>
+      <Notification
+        hidden={isHiddenSuccess}
+        className="absolute right-0 lg:right-2 bottom-2/5 lg:bottom-auto lg:top-24 [&>div>div.mantine-Text-root]:mt-1"
+        icon={<IconCheck size={20} />}
+        onClose={() => setIsHiddenSuccess(true)}
+        color="teal"
+        title="Successfully Sent"
+      />
+
+      <Notification
+        hidden={isHiddenError}
+        className="absolute right-0 lg:right-2 bottom-2/5 lg:bottom-auto lg:top-24 [&>div>div.mantine-Text-root]:mt-1"
+        icon={<IconX size={20} />}
+        onClose={() => setIsHiddenError(true)}
+        color="red"
+        title="Error Sending"
+      />
     </div>
   );
 }
