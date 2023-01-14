@@ -17,7 +17,7 @@ export function Experiences({}: Props) {
         <Timeline.Item
           lineVariant="dashed"
           title="Searching a Job"
-          bullet={<IconSearch size={28} />}
+          bullet={<IconSearch size={28} className="text-white dark:text-black" />}
           className="flex dark:text-white pb-8">
           <Text size="xs" mt={4}>
             Now
@@ -37,28 +37,28 @@ export function Experiences({}: Props) {
             apoiadas por tecnologias digitais
           </Text>
           <Box className="flex flex-wrap gap-1" mt={6}>
-            <Badge className="dark:text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
               JAVASCRIPT
             </Badge>
-            <Badge className="dark:text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
               REACT.JS
             </Badge>
-            <Badge className="dark:text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
               NODE.JS
             </Badge>
-            <Badge className="dark:text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
               SQL
             </Badge>
-            <Badge className="dark:text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
               HTML5
             </Badge>
-            <Badge className="dark:text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
               GIT
             </Badge>
-            <Badge className="dark:text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
               CSS3
             </Badge>
-            <Badge className="dark:text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
               Bootstrap
             </Badge>
           </Box>
@@ -78,28 +78,28 @@ export function Experiences({}: Props) {
             tecnologias
           </Text>
           <Box className="flex flex-wrap gap-1" mt={6}>
-            <Badge className="dark:text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
               JAVASCRIPT
             </Badge>
-            <Badge className="dark:text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
               REACT.JS
             </Badge>
-            <Badge className="dark:text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
               NODE.JS
             </Badge>
-            <Badge className="dark:text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
               SQL
             </Badge>
-            <Badge className="dark:text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
               HTML5
             </Badge>
-            <Badge className="dark:text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
               GIT
             </Badge>
-            <Badge className="dark:text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
               CSS3
             </Badge>
-            <Badge className="dark:text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
+            <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
               Bootstrap
             </Badge>
           </Box>

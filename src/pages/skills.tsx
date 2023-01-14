@@ -34,7 +34,7 @@ export function Skills({}: Props) {
   const [activeTab, setActiveTab] = useState<string | null>("frontEnd");
 
   return (
-    <div className="flex flex-col justify-center lg:justify-start items-center mx-10 lg:mx-3 xl:mx-10 text-white lg:gap-5 min-h-screen">
+    <div className="flex flex-col justify-center lg:justify-start items-center mx-10 lg:mx-3 xl:mx-10 dark:text-white lg:gap-5 min-h-screen">
       <Title className="lg:mt-[4.2rem]">Skills</Title>
       <Tabs
         value={activeTab}
@@ -48,8 +48,8 @@ export function Skills({}: Props) {
               key={i}
               className={
                 activeTab === skill.value
-                  ? "flex items-center w-full min-w-[5.5rem] lg:w-48 hover:bg-gray-900/20 py-1 sm:py-2 lg:py-5 sm:px-2 lg:px-5 text-xl gap-2 text-cyan-400 border-b-2 lg:border-b-0 lg:border-l-2 border-cyan-400 shadow-lg shadow-cyan-500/50"
-                  : "flex items-center w-full min-w-[5.5rem] lg:w-48 hover:bg-gray-900/20 py-1 sm:py-2 lg:py-5 sm:px-2 lg:px-5 gap-2 text-xl text-white border-b-2 lg:border-b-0 lg:border-l-2 border-gray-800"
+                  ? "flex items-center w-full min-w-[5.5rem] lg:w-48 hover:bg-gray-200/40 dark:hover:bg-gray-800/40 py-1 sm:py-2 lg:py-5 sm:px-2 lg:px-5 text-xl gap-2 text-cyan-400 border-b-2 lg:border-b-0 lg:border-l-2 border-cyan-400 shadow-lg shadow-cyan-500/50"
+                  : "flex items-center w-full min-w-[5.5rem] lg:w-48 hover:bg-gray-200/40 dark:hover:bg-gray-800/40 py-1 sm:py-2 lg:py-5 sm:px-2 lg:px-5 gap-2 text-xl dark:text-white border-b-2 lg:border-b-0 lg:border-l-2 border-gray-300 dark:border-gray-800"
               }
               value={skill.value}
               icon={
@@ -80,7 +80,7 @@ export function Skills({}: Props) {
             </Box>
             <Box className="flex flex-col items-center justify-center gap-4">
               <Title order={4}>In Study</Title>
-              <Flex className="gap-2 lg:gap-4 text-xs xl:text-base items-center justify-evenly  lg:max-w-[15rem] flex-wrap">
+              <Flex className="gap-2 lg:gap-4 text-xs xl:text-base items-center justify-evenly lg:max-w-[15rem] flex-wrap">
                 {StudyFrontEnd?.map((skill, i) => (
                   <SkillCard
                     key={i}
@@ -97,17 +97,17 @@ export function Skills({}: Props) {
               title="Dev list server">
               <Image
                 src={node}
-                className="bg-white rounded-lg h-8 w-8 p-[.2rem]"
+                className="bg-gray-900 dark:bg-white rounded-lg h-8 w-8 p-[.2rem]"
                 alt="it's node logo"
               />
               <Image
                 src={prisma}
-                className="bg-white rounded-lg h-8 w-8 p-1"
+                className="bg-gray-900 dark:bg-white rounded-lg h-8 w-8 p-1"
                 alt="it's prisma logo"
               />
               <Image
                 src={javascript}
-                className="bg-white rounded-lg h-8 w-8 p-1"
+                className="bg-gray-900 dark:bg-white rounded-lg h-8 w-8 p-1"
                 alt="it's javascript logo"
               />
             </FeaturedProject>

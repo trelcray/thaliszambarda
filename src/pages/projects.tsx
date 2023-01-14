@@ -2,6 +2,7 @@ import { Carousel, Embla } from "@mantine/carousel";
 import { Box, Progress, Title } from "@mantine/core";
 import { useCallback, useEffect, useState } from "react";
 import { Slide } from "../components/Slide";
+import { ProjectsData } from "../utils/data";
 
 interface Props {}
 
@@ -23,23 +24,33 @@ export function Projects({}: Props) {
   }, [embla, handleScroll]);
 
   return (
-    <div className="flex flex-col justify-center items-center mx-2 lg:mx-3 xl:mx-10 text-white lg:gap-16 min-h-screen">
-      <Title className="text-white mt-6">Projects</Title>
+    <div className="flex flex-col justify-center items-center mx-2 lg:mx-3 xl:mx-10 dark:text-white lg:gap-16 min-h-screen">
+      <Title className="dark:text-white mt-6">Projects</Title>
       <Box className="xl:w-full">
         <Carousel
           dragFree
           align="center"
           slideGap="md"
           height={400}
-          className="[&>div>button]:text-cyan-400 [&>div>button]:border-white w-[21rem] sm:w-full"
+          className="[&>div>button]:text-cyan-400 [&>div>button]:border-2 [&>div>button]:border-gray-500 [&>div>button]:bg-gray-900  dark:[&>div>button]:bg-white w-[21rem] sm:w-full"
           getEmblaApi={setEmbla}
           initialSlide={0}>
-          <Carousel.Slide className="[&>div>div>.hidded]:hover:flex [&>div>div>.hidded]:hover:duration-500 [&>div>div>.hidded]:hover:ease-in-out [&>div>div>.buttons]:hover:justify-around [&>div>div>.info]:hover:justify-around [&>div>div>.hidded]:py-3 [&>div>div>div>button]:hover:flex md:[&>div>div>img]:hover:scale-50 max-w-lg">
-            <Slide />
-          </Carousel.Slide>
-          <Carousel.Slide className="[&>div>div>.hidded]:hover:flex [&>div>div>.hidded]:hover:duration-500 [&>div>div>.hidded]:hover:ease-in-out  [&>div>div>.buttons]:hover:justify-around [&>div>div>.info]:hover:justify-around [&>div>div>.hidded]:py-3 [&>div>div>div>button]:hover:flex md:[&>div>div>img]:hover:scale-50 max-w-lg">
-            <Slide />
-          </Carousel.Slide>
+          {ProjectsData?.map((project, i) => (
+            <Carousel.Slide
+              key={i}
+              className="[&>div>div>.hidded]:hover:flex [&>div>div>div>a]:hover:flex [&>div>div>.hidded]:hover:duration-500 [&>div>div>.hidded]:hover:ease-in-out [&>div>div>.buttons]:hover:justify-between [&>div>div>.info]:hover:justify-between [&>div>div>div>button]:hover:flex max-w-lg">
+              <Slide
+                description={project.description}
+                title={project.title}
+                urlGithub={project.urlGithub}
+                urlImage={project.urlImage}
+                urlSkill1={project.urlSkill1}
+                urlSkill2={project.urlSkill2}
+                urlSkill3={project.urlSkill3}
+                urlSkill4={project.urlSkill4}
+              />
+            </Carousel.Slide>
+          ))}
         </Carousel>
         <div className="w-full h-full">
           <Progress
@@ -51,7 +62,7 @@ export function Projects({}: Props) {
             size="sm"
             mt="xl"
             mx="auto"
-            className="bg-gray-800 [&>div.mantine-xpnokq]:bg-cyan-400"
+            className="bg-gray-300 dark:bg-gray-800 [&>div.mantine-xpnokq]:bg-cyan-400"
           />
         </div>
       </Box>

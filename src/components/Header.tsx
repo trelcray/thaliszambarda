@@ -51,11 +51,11 @@ export const Header = memo(({ inView }: Props) => {
       variant="text"
       className={
         index === active
-          ? "group uppercase text-sky-800 dark:text-cyan-400 font-semibold transition-all duration-300 ease-in-out"
+          ? "group uppercase text-cyan-400 font-semibold transition-all duration-300 ease-in-out"
           : "group uppercase dark:text-white transition-all duration-300 ease-in-out"
       }
       onClick={(e) => handleClick(item.link, e, index)}>
-      <span className="bg-left-bottom pb-2 bg-gradient-to-r from-blue-400 to-white dark:from-cyan-400 dark:to-gray-900 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+      <span className="bg-left-bottom pb-2 bg-gradient-to-r from-cyan-400 to-white dark:from-cyan-400 dark:to-gray-900 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
         {item.label}
       </span>
     </Anchor>
@@ -99,7 +99,7 @@ export const Header = memo(({ inView }: Props) => {
     <PrimitiveHeader
       className={
         navbar
-          ? "sticky border-0 top-0 bg-opacity-20 dark:bg-opacity-20 bg-sky-300 dark:bg-gray-700 z-50"
+          ? "sticky border-0 top-0 bg-opacity-90 dark:bg-opacity-20 border-b dark:border-gray-800 bg-white dark:bg-gray-700 z-50"
           : "border-b-0 py-14 bg-transparent h-24"
       }
       height={70}>
@@ -109,7 +109,7 @@ export const Header = memo(({ inView }: Props) => {
         <section className="dark:text-white uppercase text-xl space-x-2">
           <Title className="text-2xl xl:text-4xl">
             Thalis{" "}
-            <span className="dark:text-cyan-400 text-sky-800">Zambarda</span>
+            <span className="text-cyan-400">Zambarda</span>
           </Title>
         </section>
         <Group className="xl:gap-6 hidden lg:flex">{items}</Group>
@@ -117,7 +117,7 @@ export const Header = memo(({ inView }: Props) => {
           <Group className="hidden lg:flex">
             <ActionIcon
               variant="outline"
-              className="rounded-full border-gray-500 dark:border-gray-300 dark:text-yellow-500 text-sky-800"
+              className="rounded-full border-gray-500 hover:bg-gray-900 dark:hover:bg-gray-200 dark:border-gray-300 dark:text-yellow-500 text-cyan-500"
               onClick={() => toggleColorScheme()}
               title="Toggle color scheme">
               {theme === "dark" ? (
@@ -154,7 +154,7 @@ export const Header = memo(({ inView }: Props) => {
                     variant="text"
                     className={
                       index === active
-                        ? "text-blue-400 dark:text-blue-500"
+                        ? "text-cyan-400 dark:text-blue-500"
                         : "text-gray-700 dark:text-white"
                     }>
                     {item.label}
@@ -166,13 +166,13 @@ export const Header = memo(({ inView }: Props) => {
 
               <Menu.Label>Settings</Menu.Label>
               <Menu.Item
-                className=" dark:text-white hover:bg-sky-200 focus:bg-sky-200 dark:dark: focus:dark:bg-gray-500 hover:dark:bg-gray-500 transition-colors duration-300 ease-in"
+                className=" dark:text-white hover:bg-gray-200 focus:bg-sky-200 dark:dark: focus:dark:bg-gray-500 hover:dark:bg-gray-500 transition-colors duration-300 ease-in"
                 onClick={HandleChangeTheme}
                 icon={
                   theme === "dark" ? (
                     <IconSun className="border rounded-full border-gray-300 h-6 w-6 p-1 text-yellow-500" />
                   ) : (
-                    <IconMoonStars className="border rounded-full border-gray-300 h-6 w-6 p-1 text-blue-500" />
+                    <IconMoonStars className="border rounded-full border-gray-300 h-6 w-6 p-1 text-cyan-500" />
                   )
                 }>
                 {theme === "dark" ? "Dark Mode" : "Light Mode"}

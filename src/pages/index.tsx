@@ -48,7 +48,7 @@ export default function Index() {
   const [ref6] = useInView();
 
   return (
-    <div className="flex flex-col gap-10 bg-repeat min-h-screen">
+    <div className="flex flex-col gap-10 bg-repeat min-h-screen bg-white dark:bg-transparent">
       <Header
         inView={index}
       />

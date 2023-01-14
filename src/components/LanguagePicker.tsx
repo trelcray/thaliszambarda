@@ -19,7 +19,7 @@ export function LanguagePicker() {
 
   const items = data.map((item) => (
     <Menu.Item
-      className="w-[12.3rem] dark:text-white hover:dark:bg-gray-600 hover:bg-sky-200 focus:dark:bg-gray-600"
+      className="w-[12.3rem] dark:text-white hover:dark:bg-gray-600 hover:bg-gray-200 focus:dark:bg-gray-600"
       icon={
         <Image
           src={item.image}
@@ -29,8 +29,7 @@ export function LanguagePicker() {
         />
       }
       onClick={() => setSelected(item)}
-      key={item.label}
-    >
+      key={item.label}>
       {item.label}
     </Menu.Item>
   ));
@@ -42,10 +41,9 @@ export function LanguagePicker() {
       transition="scale-y"
       transitionDuration={200}
       position="bottom-end"
-      withArrow
-    >
+      withArrow>
       <Menu.Target>
-        <UnstyledButton className="flex justify-between items-center py-3 px-4 gap-2 border-solid border rounded-md xl:w-52 dark:border-gray-200 border-gray-500 transition-colors duration-300 ease-in hover:dark:bg-gray-500 hover:bg-sky-200">
+        <UnstyledButton className="flex justify-between items-center py-3 px-4 gap-2 border-solid border rounded-md xl:w-52 dark:border-gray-200 border-gray-500 transition-colors duration-300 ease-in hover:dark:bg-gray-500 hover:bg-gray-200">
           <Group>
             <Image
               src={selected.image}
@@ -68,7 +66,7 @@ export function LanguagePicker() {
           />
         </UnstyledButton>
       </Menu.Target>
-      <Menu.Dropdown className="bg-transparent border-gray-200 dark:border-gray-200">
+      <Menu.Dropdown className="bg-white dark:bg-transparent [&>div.mantine-Menu-arrow]:border-gray-500 dark:[&>div.mantine-Menu-arrow]:border-gray-200 border-gray-500 dark:border-gray-200">
         {items}
       </Menu.Dropdown>
     </Menu>

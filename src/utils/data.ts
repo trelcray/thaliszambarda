@@ -37,6 +37,18 @@ export interface IContactInfoProps {
   title: string;
 }
 
+export interface IProjectProps {
+  title: string;
+  description: string;
+  urlGithub: string;
+  urlProject: string;
+  urlImage: string;
+  urlSkill1: string;
+  urlSkill2: string;
+  urlSkill3: string;
+  urlSkill4: string;
+}
+
 export const FrontEnd: IDataProps[] = [
   {
     skillImage: react,
@@ -215,5 +227,41 @@ export const contactInfo: IContactInfoProps[] = [
     title: "Working Hours",
     icon: IconSunLow,
     value: "08 a.m.- 08 p.m."
+  },
+]
+
+export const ProjectsData: IProjectProps[] = [
+  {
+    title: "Dev list server",
+    description: "A way to share your github profile with anyone passing by the site.",
+    urlGithub: "",
+    urlProject: "",
+    urlImage: "/eu.jpeg",
+    urlSkill1: figma,
+    urlSkill2: figma,
+    urlSkill3: figma,
+    urlSkill4: figma
+  },
+  {
+    title: "Dev list server",
+    description: "A way to share your github profile with anyone passing by the site.",
+    urlGithub: "",
+    urlProject: "",
+    urlImage: "/eu.jpeg",
+    urlSkill1: figma,
+    urlSkill2: figma,
+    urlSkill3: figma,
+    urlSkill4: figma
+  },
+  {
+    title: "Dev list server",
+    description: "A way to share your github profile with anyone passing by the site.",
+    urlGithub: "",
+    urlProject: "",
+    urlImage: "/eu.jpeg",
+    urlSkill1: figma,
+    urlSkill2: figma,
+    urlSkill3: figma,
+    urlSkill4: figma
   },
 ]

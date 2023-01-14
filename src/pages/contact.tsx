@@ -73,7 +73,7 @@ export function Contact({}: Props) {
   };
   return (
     <div className="relative flex flex-col gap-5 mx-5 justify-center items-center min-h-screen">
-      <Title className="text-white lg:mt-16">Contact</Title>
+      <Title className="dark:text-white lg:mt-16">Contact</Title>
       <div className="flex flex-col md:flex-row justify-evenly w-full text-white">
         <div className="bg-cyan-500 rounded-xl p-6">
           <Title order={4} className="text-white">
@@ -94,7 +94,7 @@ export function Contact({}: Props) {
         </div>
 
         <form ref={form} method="post" onSubmit={handleSendEmail}>
-          <Title order={4} className="text-white mt-6">
+          <Title order={4} className="text-black dark:text-white mt-6">
             Get in touch
           </Title>
 
@@ -104,13 +104,19 @@ export function Contact({}: Props) {
               placeholder="johndoe@gmail.com"
               name="email"
               type="email"
+              className="[&>label]:text-black dark:[&>label]:text-white"
             />
-            <TextInput label="Subject" placeholder="subject" name="subject" />
+            <TextInput
+              label="Subject"
+              placeholder="subject"
+              name="subject"
+              className="[&>label]:text-black dark:[&>label]:text-white"
+            />
 
             <Textarea
               label="Your message"
               placeholder="Please include all relevant information"
-              className="[&>div>textarea]:w-full [&>div>textarea]:bg-gray-800 [&>div>textarea]:border [&>div>textarea]:border-gray-800 hover:[&>div>textarea]:border-cyan-400 focus:[&>div>textarea]:border-cyan-400 [&>div>textarea]:outline-none [&>div>textarea]:rounded [&>div>textarea]:px-2 [&>div>textarea]:pb-10  text-white [&>label>span]:text-red-500"
+              className="[&>div>textarea]:w-full [&>div>textarea]:bg-gray-800 [&>div>textarea]:border [&>div>textarea]:border-gray-800 hover:[&>div>textarea]:border-cyan-400 focus:[&>div>textarea]:border-cyan-400 [&>div>textarea]:outline-none [&>div>textarea]:rounded [&>div>textarea]:px-2 [&>div>textarea]:pb-10  dark:text-white [&>label]:text-black dark:[&>label]:text-white [&>label>span]:text-red-500"
               unstyled
               name="message"
               minRows={3}
@@ -124,13 +130,13 @@ export function Contact({}: Props) {
           </div>
         </form>
       </div>
-      <div className="flex justify-between items-center w-full border-t border-gray-500 py-8 gap-8">
+      <div className="flex justify-between items-center w-full border-t border-gray-600 dark:border-gray-500 py-8 gap-8">
         <Group spacing="xs" position="right" noWrap>
           <Anchor
             href="https://www.linkedin.com/in/thalis-zambarda"
             target="_blank">
             <ActionIcon
-              className="bg-transparent hover:bg-gray-800 border-gray-500"
+              className="bg-gray-900 hover:bg-gray-800 border-gray-500"
               size="lg"
               variant="default"
               radius="xl">
@@ -139,7 +145,7 @@ export function Contact({}: Props) {
           </Anchor>
           <Anchor href="https://github.com/trelcray" target="_blank">
             <ActionIcon
-              className="bg-transparent hover:bg-gray-800 border-gray-500"
+              className="bg-gray-900 hover:bg-gray-800 border-gray-500"
               size="lg"
               variant="default"
               radius="xl">
@@ -151,7 +157,7 @@ export function Contact({}: Props) {
             href="https://www.instagram.com/thaliszambarda"
             target="_blank">
             <ActionIcon
-              className="bg-transparent hover:bg-gray-800 border-gray-500"
+              className="bg-gray-900 hover:bg-gray-800 border-gray-500"
               size="lg"
               variant="default"
               radius="xl">
@@ -159,7 +165,7 @@ export function Contact({}: Props) {
             </ActionIcon>
           </Anchor>
         </Group>
-        <Text color="dimmed" size="sm">
+        <Text className="text-gray-600 dark:text-gray-400" size="sm">
           © 2023 Thalis Zambarda. All rights reserved.
         </Text>
       </div>

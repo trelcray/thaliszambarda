@@ -16,7 +16,7 @@ export function Home({}: Props) {
     <div className="flex flex-col lg:flex-row justify-center md:ml-20 md:gap-2 items-center lg:pb-28 min-h-screen">
       <Box className="flex flex-col gap-10">
         <section className="flex flex-col gap-2 lg:gap-4 lg:w-96 text-center">
-          <Text className="font-semibold text-xl md:text-3xl lg:text-4xl dark:text-cyan-400 text-sky-800">
+          <Text className="font-semibold text-xl md:text-3xl lg:text-4xl text-cyan-400">
             Hello I{`'`}m,
           </Text>
           <Title className="text-3xl md:text-5xl lg:text-6xl dark:text-white">
@@ -27,7 +27,11 @@ export function Home({}: Props) {
             I Have a Degree in Systems Development
           </Text>
         </section>
-        <Button icon={<IconRubberStamp size={20} />}>Hire Me</Button>
+        <Button
+          className="text-gray-800 border-gray-800 hover:bg-gray-200/60"
+          leftIcon={<IconRubberStamp size={20} />}>
+          Hire Me
+        </Button>
       </Box>
       <Image
         className="bg-cover w-[45rem] h-[35rem]"

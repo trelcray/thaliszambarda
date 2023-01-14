@@ -11,11 +11,12 @@ export function Button({ children, className, ...props }: IButtonProps) {
   return (
     <PrimitiveButton
       className={clsx(
-        "rounded border-2 dark:text-cyan-400 text-sky-800 dark:border-cyan-400 border-sky-800 hover:bg-blue-300/40 dark:hover:bg-cyan-200/10 hover:border-sky-900 hover:text-sky-900",
+        "rounded border-2 border-cyan-400 text-cyan-400 dark:text-cyan-400 hover:bg-cyan-200/30 dark:hover:bg-cyan-200/10",
         className
       )}
       variant="outline"
-      {...props}>
+      {...props}
+      >
       {children}
     </PrimitiveButton>
   );

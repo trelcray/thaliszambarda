@@ -56,7 +56,7 @@ export function About({}: Props) {
       </Box>
       <Box className="flex flex-wrap gap-2 items-center justify-around w-full">
         <Anchor href="curriculo.pdf" target="_blank" className="no-underline">
-        <Card className="hover:-translate-y-1 hover:scale-110 cursor-pointer">
+        <Card className="hover:-translate-y-1 hover:scale-110 cursor-pointer bg-gray-900 text-white dark:bg-white dark:text-black">
           <Box className="flex gap-2">
             <IconArrowBarToDown />
             <Text> Resume:</Text>
@@ -64,7 +64,7 @@ export function About({}: Props) {
           <Text className="font-semibold">Click to open</Text>
         </Card>
         </Anchor>
-        <Card className="hover:-translate-y-1 hover:scale-110">
+        <Card className="hover:-translate-y-1 hover:scale-110 bg-gray-900 text-white dark:bg-white dark:text-black">
           <Box className="flex gap-2">
             <IconCake />
             <Text>Birth:</Text>
