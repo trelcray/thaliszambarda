@@ -12,21 +12,13 @@ import {
 import { useLocalStorage } from "@mantine/hooks";
 import { IconSun, IconMoonStars } from "@tabler/icons";
 import { FormEvent, memo, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { data } from "../utils/data";
 import { LanguagePicker } from "./LanguagePicker";
 
 interface Props {
   inView: number;
 }
-
-// Use data in a more appropriate place
-const data = [
-  { label: "Home", link: "home" },
-  { label: "About", link: "about" },
-  { label: "Experiences", link: "experiences" },
-  { label: "Skills", link: "skills" },
-  { label: "Projects", link: "projects" },
-  { label: "Contact", link: "contact" },
-];
 
 export const Header = memo(({ inView }: Props) => {
   const [theme, setTheme] = useLocalStorage<ColorScheme>({
@@ -37,6 +29,8 @@ export const Header = memo(({ inView }: Props) => {
   const [navbar, setNavbar] = useState(false);
   const [opened, setOpened] = useState(false);
   const [active, setActive] = useState(0);
+
+  const { t } = useTranslation();
 
   const handleClick = (link: string, e: FormEvent, index: number) => {
     e.preventDefault();
@@ -56,7 +50,7 @@ export const Header = memo(({ inView }: Props) => {
       }
       onClick={(e) => handleClick(item.link, e, index)}>
       <span className="bg-left-bottom pb-2 bg-gradient-to-r from-cyan-400 to-white dark:from-cyan-400 dark:to-gray-900 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
-        {item.label}
+        {t(item.label)}
       </span>
     </Anchor>
   ));
@@ -99,7 +93,7 @@ export const Header = memo(({ inView }: Props) => {
     <PrimitiveHeader
       className={
         navbar
-          ? "sticky border-0 top-0 bg-opacity-90 dark:bg-opacity-20 border-b dark:border-gray-800 bg-white dark:bg-gray-700 z-50"
+          ? "sticky border-0 top-0 bg-opacity-90 dark:bg-opacity-20 dark:hover:bg-opacity-90 border-b dark:border-gray-800 bg-white dark:bg-gray-700 z-50"
           : "border-b-0 py-14 bg-transparent h-24"
       }
       height={70}>
@@ -108,8 +102,7 @@ export const Header = memo(({ inView }: Props) => {
         fluid>
         <section className="dark:text-white uppercase text-xl space-x-2">
           <Title className="text-2xl xl:text-4xl">
-            Thalis{" "}
-            <span className="text-cyan-400">Zambarda</span>
+            Thalis <span className="text-cyan-400">Zambarda</span>
           </Title>
         </section>
         <Group className="xl:gap-6 hidden lg:flex">{items}</Group>
@@ -138,16 +131,23 @@ export const Header = memo(({ inView }: Props) => {
             onOpen={() => setOpened(true)}
             onClose={() => setOpened(false)}>
             <Menu.Target>
-              <Burger className="lg:hidden" color="white" opened={opened} />
+              <Burger
+                className={
+                  opened
+                    ? "lg:hidden dark:[&>.mantine-Burger-burger]:bg-transparent dark:before:[&>.mantine-Burger-burger]:bg-white dark:after:[&>.mantine-Burger-burger]:bg-white"
+                    : "lg:hidden dark:[&>.mantine-Burger-burger]:bg-white dark:before:[&>.mantine-Burger-burger]:bg-white dark:after:[&>.mantine-Burger-burger]:bg-white"
+                }
+                opened={opened}
+              />
             </Menu.Target>
 
-            <Menu.Dropdown className="lg:hidden bg-sky-100/95 dark:bg-gray-700">
-              <Menu.Label >Navigation</Menu.Label>
+            <Menu.Dropdown className="[&>div.mantine-Menu-arrow]:border-gray-500 lg:hidden border-gray-500 dark:border-white dark:bg-gray-700">
+              <Menu.Label>Navigation</Menu.Label>
 
               {data.map((item, index) => (
                 <Menu.Item
                   key={index}
-                  className="focus:bg-sky-200 hover:bg-sky-200 focus:dark:bg-gray-500 hover:dark:bg-gray-500 transition-colors duration-300 ease-in"
+                  className="focus:bg-gray-200 hover:bg-gray-200 focus:dark:bg-gray-500 hover:dark:bg-gray-500 transition-colors duration-300 ease-in"
                   onClick={(e: FormEvent) => handleClick(item.link, e, index)}>
                   <Anchor<"a">
                     key={index}
@@ -157,7 +157,7 @@ export const Header = memo(({ inView }: Props) => {
                         ? "text-cyan-400 dark:text-blue-500"
                         : "text-gray-700 dark:text-white"
                     }>
-                    {item.label}
+                    {t(item.label)}
                   </Anchor>
                 </Menu.Item>
               ))}

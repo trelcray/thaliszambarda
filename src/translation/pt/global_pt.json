@@ -1,0 +1,51 @@
+{
+  "language": {
+    "pt": "Português",
+    "en": "Inglês"
+  },
+  "pages": {
+    "home": "início",
+    "about": "Sobre",
+    "experiences": "Experiência",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "home": {
+    "title": "Olá eu sou,",
+    "description": "Possuo graduação em Análise e desenvolvimento de sistemas",
+    "first": "Desenvolvedor",
+    "second": "Front-End",
+    "third": "Profissional",
+    "button": "Contrate-me"
+  },
+  "tabSkills": {
+    "title": "Utilitários",
+    "buttonGithub": "Código no Github",
+    "buttonProject": "Veja o Projeto"
+  },
+  "contactInfo": {
+    "labelEmail": "Seu Email",
+    "labelSubject": "Assunto",
+    "labelMessage": "Sua Mensagem",
+    "placeholderMessage": "Por favor inclua todas as informações relevantes",
+    "title": "Entrar em Contato",
+    "submit": "Enviar Mensagem",
+    "Email": "Email",
+    "Phone": "Telefone",
+    "Address": "Endereço",
+    "Working Hours": "Horas de serviço",
+    "Value": "08 manhã - 20 noite",
+    "footer": "Todos os direitos reservados."
+  },
+  "projectsData": {
+    "buttonGithub": "Código no Github",
+    "buttonProject": "Veja o Projeto",
+    "title0": "Lista de Tarefas",
+    "description0": "A way to share your github profile with anyone passing by the site.",
+    "title1": "Repositorios do github",
+    "description1": "A way to share your github profile with anyone passing by the site.",
+    "title2": "CRUD",
+    "description2": "A way to share your github profile with anyone passing by the site."
+  }
+}

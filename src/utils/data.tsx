@@ -16,8 +16,19 @@ import figma from "../assets/figma.svg";
 import redux from "../assets/redux.svg";
 import jest from "../assets/jest.svg";
 
-import { IconAppWindow, IconAt, IconDatabase, IconMapPin, IconPhoneCall, IconSunLow, IconTool, IconTools, TablerIconProps } from "@tabler/icons";
-import { FunctionComponent } from "react";
+import {
+  IconAppWindow,
+  IconAt,
+  IconDatabase,
+  IconMapPin,
+  IconPhoneCall,
+  IconSunLow,
+  IconTool,
+  IconTools,
+  TablerIconProps,
+} from "@tabler/icons";
+import { FunctionComponent, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 export interface IDataProps {
   skillImage: string;
@@ -54,214 +65,232 @@ export const FrontEnd: IDataProps[] = [
     skillImage: react,
     title: "React.JS",
     alt: "React.JS logo image",
-    className: "w-full h-full p-1 xl:p-2"
+    className: "w-full h-full p-1 xl:p-2",
   },
   {
     skillImage: javascript,
     title: "JavaScript",
     alt: "JavaScript logo image",
-    className: "w-full h-full p-2 xl:p-3"
+    className: "w-full h-full p-2 xl:p-3",
   },
   {
     skillImage: bootstrap,
     title: "Bootstrap",
     alt: "Bootstrap logo image",
-    className: "w-full h-full p-2 xl:p-3"
+    className: "w-full h-full p-2 xl:p-3",
   },
   {
     skillImage: html5,
     title: "Html5",
     alt: "Html5 logo image",
-    className: "w-full h-full p-1 xl:p-2"
+    className: "w-full h-full p-1 xl:p-2",
   },
   {
     skillImage: tailwind,
     title: "TailwindCSS ",
     alt: "Tailwind logo image",
-    className: "w-full h-full p-1 xl:p-2"
+    className: "w-full h-full p-1 xl:p-2",
   },
   {
     skillImage: css3,
     title: "CSS3",
     alt: "CSS3 logo image",
-    className: "w-full h-full p-2 xl:p-3"
-  }
-]
+    className: "w-full h-full p-2 xl:p-3",
+  },
+];
 
 export const StudyFrontEnd: IDataProps[] = [
   {
     skillImage: next,
     title: "Next.JS",
     alt: "Next.JS logo image",
-    className: "w-full h-full p-2 xl:p-2"
+    className: "w-full h-full p-2 xl:p-2",
   },
   {
     skillImage: mantine,
     title: "Mantine",
     alt: "Mantine logo image",
-    className: "w-full h-full p-2 xl:p-2"
+    className: "w-full h-full p-2 xl:p-2",
   },
   {
     skillImage: typescript,
     title: "Typescript",
     alt: "Typescript logo image",
-    className: "w-full h-full xl:p-1"
+    className: "w-full h-full xl:p-1",
   },
-]
+];
 
 export const BackEnd: IDataProps[] = [
   {
     skillImage: node,
     title: "Node.JS",
     alt: "Node.js logo image",
-    className: "w-full h-full p-1 xl:p-2"
+    className: "w-full h-full p-1 xl:p-2",
   },
   {
     skillImage: javascript,
     title: "JavaScript",
     alt: "JavaScript logo image",
-    className: "w-full h-full p-2 xl:p-3"
+    className: "w-full h-full p-2 xl:p-3",
   },
   {
     skillImage: postgres,
     title: "PostgreSQL",
     alt: "PostgreSQL logo image",
-    className: "w-full h-full p-1 xl:p-2"
+    className: "w-full h-full p-1 xl:p-2",
   },
   {
     skillImage: firebase,
     title: "Firebase",
     alt: "Firebase logo image",
-    className: "w-full h-full p-1 xl:p-2"
+    className: "w-full h-full p-1 xl:p-2",
   },
-]
+];
 export const StudyBackEnd: IDataProps[] = [
   {
     skillImage: prisma,
     title: "Prisma",
     alt: "Prisma logo image",
-    className: "w-full h-full p-2 xl:p-3"
+    className: "w-full h-full p-2 xl:p-3",
   },
   {
     skillImage: typescript,
     title: "Typescript",
     alt: "Typescript logo image",
-    className: "w-full h-full"
+    className: "w-full h-full",
   },
   {
     skillImage: mongo,
     title: "MongoDB",
     alt: "MongoDB logo image",
-    className: "w-full h-full p-1 xl:p-2"
+    className: "w-full h-full p-1 xl:p-2",
   },
-]
+];
 
 export const Design: IDataProps[] = [
   {
     skillImage: figma,
     title: "Figma",
     alt: "Figma logo image",
-    className: "w-full h-full p-2"
-  }
-]
+    className: "w-full h-full p-2",
+  },
+];
 
 export const Utilities: IDataProps[] = [
   {
     skillImage: redux,
     title: "Redux",
     alt: "Redux logo image",
-    className: "w-full h-full p-2 xl:p-3"
-  }
-]
+    className: "w-full h-full p-2 xl:p-3",
+  },
+];
 
 export const StudyUtilities: IDataProps[] = [
   {
     skillImage: jest,
     title: "Jest",
     alt: "Jest logo image",
-    className: "w-full h-full p-2 xl:p-3"
-  }
-]
+    className: "w-full h-full p-2 xl:p-3",
+  },
+];
 
-export const TabSkills: ITabSkillsProps[] = [
-  {
-    title: "Front-End",
-    icon: IconAppWindow,
-    value: "frontEnd"
-  },
-  {
-    title: "Back-End",
-    icon: IconDatabase,
-    value: "backEnd"
-  },
-  {
-    title: "Design",
-    icon: IconTools,
-    value: "design"
-  },
-  {
-    title: "Utilities",
-    icon: IconTool,
-    value: "utilities"
-  },
-]
-
+export const useTabSkills = () => {
+  const { t } = useTranslation();
+  const title = t("tabSkills.title") || "";
+  const tabSkills: ITabSkillsProps[] = [
+    {
+      title: "Front-End",
+      icon: IconAppWindow,
+      value: "frontEnd",
+    },
+    {
+      title: "Back-End",
+      icon: IconDatabase,
+      value: "backEnd",
+    },
+    {
+      title: "Design",
+      icon: IconTools,
+      value: "design",
+    },
+    {
+      title: title,
+      icon: IconTool,
+      value: "utilities",
+    },
+  ];
+  return tabSkills;
+};
 
 export const contactInfo: IContactInfoProps[] = [
   {
-    title: "Email",
+    title: "contactInfo.Email",
     icon: IconAt,
-    value: "thaliszambarda@gmail.com"
+    value: "thaliszambarda@gmail.com",
   },
   {
-    title: "Phone",
+    title: "contactInfo.Phone",
     icon: IconPhoneCall,
-    value: "+55 (53) 999675436"
+    value: "+55 (53) 999675436",
   },
   {
-    title: "Address",
+    title: "contactInfo.Address",
     icon: IconMapPin,
-    value: "Candiota-RS"
+    value: "Candiota-RS",
   },
   {
-    title: "Working Hours",
+    title: "contactInfo.Working Hours",
     icon: IconSunLow,
-    value: "08 a.m.- 08 p.m."
+    value: "contactInfo.Value",
   },
-]
+];
 
 export const ProjectsData: IProjectProps[] = [
   {
-    title: "Dev list server",
-    description: "A way to share your github profile with anyone passing by the site.",
+    title: "projectsData.title0",
+    description: "projectsData.description0",
     urlGithub: "",
-    urlProject: "",
-    urlImage: "/eu.jpeg",
-    urlSkill1: figma,
-    urlSkill2: figma,
-    urlSkill3: figma,
-    urlSkill4: figma
+    urlProject: "https://todo-list-trelcray.vercel.app/",
+    urlImage: "/todoList.svg",
+    urlSkill1: react,
+    urlSkill2: tailwind,
+    urlSkill3: typescript,
+    urlSkill4: redux,
   },
   {
-    title: "Dev list server",
-    description: "A way to share your github profile with anyone passing by the site.",
+    title: "projectsData.title1",
+    description: "projectsData.description1",
     urlGithub: "",
-    urlProject: "",
-    urlImage: "/eu.jpeg",
-    urlSkill1: figma,
-    urlSkill2: figma,
-    urlSkill3: figma,
-    urlSkill4: figma
+    urlProject: "https://trelcray-github-io.vercel.app/",
+    urlImage: "/gitRepositories.svg",
+    urlSkill1: react,
+    urlSkill2: tailwind,
+    urlSkill3: typescript,
+    urlSkill4: html5,
   },
   {
-    title: "Dev list server",
-    description: "A way to share your github profile with anyone passing by the site.",
+    title: "projectsData.title2",
+    description: "projectsData.description2",
     urlGithub: "",
-    urlProject: "",
-    urlImage: "/eu.jpeg",
-    urlSkill1: figma,
-    urlSkill2: figma,
-    urlSkill3: figma,
-    urlSkill4: figma
+    urlProject: "https://crud-challenge-athenas.vercel.app/",
+    urlImage: "/crud.svg",
+    urlSkill1: react,
+    urlSkill2: bootstrap,
+    urlSkill3: typescript,
+    urlSkill4: redux,
   },
-]
+];
+
+export const data = [
+  { label: "pages.home", link: "home" },
+  { label: "pages.about", link: "about" },
+  { label: "pages.experiences", link: "experiences" },
+  { label: "pages.skills", link: "skills" },
+  { label: "pages.projects", link: "projects" },
+  { label: "pages.contact", link: "contact" },
+];
+
+export const language = [
+  { label: "language.en", image: "Usa-flag.png", lng: "en" },
+  { label: "language.pt", image: "Brazil-flag.png", lng: "pt"},
+];

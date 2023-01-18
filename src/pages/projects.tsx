@@ -1,6 +1,7 @@
 import { Carousel, Embla } from "@mantine/carousel";
 import { Box, Progress, Title } from "@mantine/core";
 import { useCallback, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Slide } from "../components/Slide";
 import { ProjectsData } from "../utils/data";
 
@@ -9,6 +10,8 @@ interface Props {}
 export function Projects({}: Props) {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [embla, setEmbla] = useState<Embla | null>(null);
+
+  const { t } = useTranslation();
 
   const handleScroll = useCallback(() => {
     if (!embla) return;
@@ -25,7 +28,7 @@ export function Projects({}: Props) {
 
   return (
     <div className="flex flex-col justify-center items-center mx-2 lg:mx-3 xl:mx-10 dark:text-white lg:gap-16 min-h-screen">
-      <Title className="dark:text-white mt-6">Projects</Title>
+      <Title className="dark:text-white mt-6">{t("pages.projects")}</Title>
       <Box className="xl:w-full">
         <Carousel
           dragFree
@@ -40,9 +43,10 @@ export function Projects({}: Props) {
               key={i}
               className="[&>div>div>.hidded]:hover:flex [&>div>div>div>a]:hover:flex [&>div>div>.hidded]:hover:duration-500 [&>div>div>.hidded]:hover:ease-in-out [&>div>div>.buttons]:hover:justify-between [&>div>div>.info]:hover:justify-between [&>div>div>div>button]:hover:flex max-w-lg">
               <Slide
-                description={project.description}
-                title={project.title}
+                description={t(project.description)}
+                title={t(project.title)}
                 urlGithub={project.urlGithub}
+                urlProject={project.urlProject}
                 urlImage={project.urlImage}
                 urlSkill1={project.urlSkill1}
                 urlSkill2={project.urlSkill2}

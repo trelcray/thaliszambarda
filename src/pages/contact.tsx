@@ -18,8 +18,9 @@ import {
 import { FormEvent, FunctionComponent, useRef, useState } from "react";
 import { Button } from "../components/Button";
 import { TextInput } from "../components/TextInput";
-import { contactInfo } from "../utils/data";
 import emailjs from "@emailjs/browser";
+import { contactInfo } from "../utils/data";
+import { useTranslation } from "react-i18next";
 
 interface Props {}
 
@@ -31,6 +32,8 @@ export function Contact({}: Props) {
   const [isHiddenSuccess, setIsHiddenSuccess] = useState(true);
   const [isHiddenError, setIsHiddenError] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+
+  const { t } = useTranslation();
 
   const form = useRef<HTMLFormElement>(null);
 
@@ -73,7 +76,7 @@ export function Contact({}: Props) {
   };
   return (
     <div className="relative flex flex-col gap-5 mx-5 justify-center items-center min-h-screen">
-      <Title className="dark:text-white lg:mt-16">Contact</Title>
+      <Title className="dark:text-white lg:mt-16">{t("pages.contact")}</Title>
       <div className="flex flex-col md:flex-row justify-evenly w-full text-white">
         <div className="bg-cyan-500 rounded-xl p-6">
           <Title order={4} className="text-white">
@@ -85,8 +88,8 @@ export function Contact({}: Props) {
               <div className="flex items-center gap-4" key={i}>
                 <Icons icon={info.icon} />
                 <div>
-                  <Text className="text-sm">{info.title}</Text>
-                  <strong className="text-base">{info.value}</strong>
+                  <Text className="text-sm">{t(info.title)}</Text>
+                  <strong className="text-base">{t(info.value)}</strong>
                 </div>
               </div>
             ))}
@@ -95,27 +98,27 @@ export function Contact({}: Props) {
 
         <form ref={form} method="post" onSubmit={handleSendEmail}>
           <Title order={4} className="text-black dark:text-white mt-6">
-            Get in touch
+            {t("contactInfo.title")}
           </Title>
 
           <div className="flex flex-col gap-3 w-full md:min-w-[25rem] mt-10">
             <TextInput
-              label="Your email"
+              label={t("contactInfo.labelEmail")}
               placeholder="johndoe@gmail.com"
               name="email"
               type="email"
               className="[&>label]:text-black dark:[&>label]:text-white"
             />
             <TextInput
-              label="Subject"
-              placeholder="subject"
+              label={t("contactInfo.labelSubject")}
+              placeholder={t("contactInfo.labelSubject") || ""}
               name="subject"
               className="[&>label]:text-black dark:[&>label]:text-white"
             />
 
             <Textarea
-              label="Your message"
-              placeholder="Please include all relevant information"
+              label={t("contactInfo.labelMessage")}
+              placeholder={t("contactInfo.placeholderMessage") || ""}
               className="[&>div>textarea]:w-full [&>div>textarea]:bg-gray-800 [&>div>textarea]:border [&>div>textarea]:border-gray-800 hover:[&>div>textarea]:border-cyan-400 focus:[&>div>textarea]:border-cyan-400 [&>div>textarea]:outline-none [&>div>textarea]:rounded [&>div>textarea]:px-2 [&>div>textarea]:pb-10  dark:text-white [&>label]:text-black dark:[&>label]:text-white [&>label>span]:text-red-500"
               unstyled
               name="message"
@@ -124,7 +127,7 @@ export function Contact({}: Props) {
             />
             <Group position="right">
               <Button type="submit" loading={isLoading}>
-                Send message
+              {t("contactInfo.submit")}
               </Button>
             </Group>
           </div>
@@ -166,7 +169,7 @@ export function Contact({}: Props) {
           </Anchor>
         </Group>
         <Text className="text-gray-600 dark:text-gray-400" size="sm">
-          © 2023 Thalis Zambarda. All rights reserved.
+          © 2023 Thalis Zambarda. {t("contactInfo.footer")}
         </Text>
       </div>
       <Notification

@@ -1,10 +1,13 @@
 import { Anchor, Box, Card, Text, Title } from "@mantine/core";
 import { IconCake, IconArrowBarToDown } from "@tabler/icons";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 interface Props {}
 
 export function About({}: Props) {
+  const { t } = useTranslation();
+
   function getAge(dateString: string) {
     let today = new Date();
     let birthDate = new Date(dateString);
@@ -20,7 +23,7 @@ export function About({}: Props) {
 
   return (
     <div className="flex flex-col mx-2 text-center lg:text-start items-center justify-center gap-10 dark:text-white min-h-screen">
-      <Title className="lg:mt-16">About</Title>
+      <Title className="lg:mt-16">{t("pages.about")}</Title>
       <Box className="flex flex-col lg:flex-row items-center lg:justify-evenly w-full">
         <Image
           src="/eu.jpeg"
@@ -56,13 +59,13 @@ export function About({}: Props) {
       </Box>
       <Box className="flex flex-wrap gap-2 items-center justify-around w-full">
         <Anchor href="curriculo.pdf" target="_blank" className="no-underline">
-        <Card className="hover:-translate-y-1 hover:scale-110 cursor-pointer bg-gray-900 text-white dark:bg-white dark:text-black">
-          <Box className="flex gap-2">
-            <IconArrowBarToDown />
-            <Text> Resume:</Text>
-          </Box>
-          <Text className="font-semibold">Click to open</Text>
-        </Card>
+          <Card className="hover:-translate-y-1 hover:scale-110 cursor-pointer bg-gray-900 text-white dark:bg-white dark:text-black">
+            <Box className="flex gap-2">
+              <IconArrowBarToDown />
+              <Text> Resume:</Text>
+            </Box>
+            <Text className="font-semibold">Click to open</Text>
+          </Card>
         </Anchor>
         <Card className="hover:-translate-y-1 hover:scale-110 bg-gray-900 text-white dark:bg-white dark:text-black">
           <Box className="flex gap-2">

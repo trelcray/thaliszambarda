@@ -1,5 +1,6 @@
 import { Box, Flex, Text, Title } from "@mantine/core";
 import { ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "./Button";
 
 interface IFeaturedProjectProps {
@@ -8,7 +9,12 @@ interface IFeaturedProjectProps {
   children: ReactNode;
 }
 
-export function FeaturedProject({ description, title, children }: IFeaturedProjectProps) {
+export function FeaturedProject({
+  description,
+  title,
+  children,
+}: IFeaturedProjectProps) {
+  const { t } = useTranslation();
   return (
     <Box className="flex flex-col w-full items-center justify-center gap-3 max-w-xs">
       <Title order={4}>Featured Project</Title>
@@ -21,9 +27,9 @@ export function FeaturedProject({ description, title, children }: IFeaturedProje
       <Title order={5}>{title}</Title>
       <Text className="text-xs">{description}</Text>
       <Flex className="justify-around w-full">
-        <Button className="text-xs md:text-base">Github Code</Button>
+        <Button className="text-xs md:text-base">{t("tabSkills.buttonGithub")}</Button>
         <Button className="bg-cyan-400 border-cyan-400 hover:bg-cyan-500 hover:border-cyan-500 dark:hover:bg-cyan-500 dark:hover:border-cyan-500">
-          <p className="text-white text-xs md:text-base">View Project</p>
+          <p className="text-white text-xs md:text-base">{t("tabSkills.buttonProject")}</p>
         </Button>
       </Flex>
     </Box>

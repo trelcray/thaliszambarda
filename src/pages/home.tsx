@@ -3,12 +3,16 @@ import Image from "next/image";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { Button } from "../components/Button";
 import { IconRubberStamp } from "@tabler/icons";
+import { useTranslation } from "react-i18next";
 
 interface Props {}
 
 export function Home({}: Props) {
+
+  const { t } = useTranslation();
+
   const [text] = useTypewriter({
-    words: ["Professional", "Front-End", "Developer"],
+    words: [t("home.first"), t("home.second"), t("home.third")],
     loop: true,
     delaySpeed: 3000,
   });
@@ -17,20 +21,20 @@ export function Home({}: Props) {
       <Box className="flex flex-col gap-10">
         <section className="flex flex-col gap-2 lg:gap-4 lg:w-96 text-center">
           <Text className="font-semibold text-xl md:text-3xl lg:text-4xl text-cyan-400">
-            Hello I{`'`}m,
+            {t("home.title")}
           </Text>
           <Title className="text-3xl md:text-5xl lg:text-6xl dark:text-white">
             {text}
             <Cursor />
           </Title>
           <Text className="dark:text-gray-400 text-gray-800">
-            I Have a Degree in Systems Development
+            {t("home.description")}
           </Text>
         </section>
         <Button
-          className="text-gray-800 border-gray-800 hover:bg-gray-200/60"
+          className="text-gray-800 border-gray-800 dark:border-cyan-400 hover:bg-gray-200/60"
           leftIcon={<IconRubberStamp size={20} />}>
-          Hire Me
+          {t("home.button")}
         </Button>
       </Box>
       <Image

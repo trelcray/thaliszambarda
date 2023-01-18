@@ -1,23 +1,17 @@
 import { useState } from "react";
-import {
-  createStyles,
-  UnstyledButton,
-  Menu,
-  Image,
-  Group,
-} from "@mantine/core";
+import { UnstyledButton, Menu, Image, Group } from "@mantine/core";
 import { IconChevronDown } from "@tabler/icons";
-
-const data = [
-  { label: "English", image: "Usa-flag.png" },
-  { label: "Portuguese", image: "Brazil-flag.png" },
-];
+import { changeLanguage } from "i18next";
+import { language } from "../utils/data";
+import { useTranslation } from "react-i18next";
 
 export function LanguagePicker() {
   const [opened, setOpened] = useState(false);
-  const [selected, setSelected] = useState(data[0]);
+  const [selected, setSelected] = useState(language[0]);
 
-  const items = data.map((item) => (
+  const { t } = useTranslation();
+
+  const items = language.map((item) => (
     <Menu.Item
       className="w-[12.3rem] dark:text-white hover:dark:bg-gray-600 hover:bg-gray-200 focus:dark:bg-gray-600"
       icon={
@@ -28,9 +22,11 @@ export function LanguagePicker() {
           alt="brazil or english flag"
         />
       }
-      onClick={() => setSelected(item)}
+      onClick={() => {
+        setSelected(item), changeLanguage(item.lng);
+      }}
       key={item.label}>
-      {item.label}
+      {t(item.label)}
     </Menu.Item>
   ));
 
@@ -52,7 +48,7 @@ export function LanguagePicker() {
               alt="flag of language selected"
             />
             <span className="font-medium text-sm dark:text-white hidden lg:inline">
-              {selected.label}
+              {t(selected.label)}
             </span>
           </Group>
           <IconChevronDown

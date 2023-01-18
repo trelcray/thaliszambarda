@@ -1,15 +1,5 @@
 import { Box, Flex, Tabs, Text, Title } from "@mantine/core";
 import { TablerIconProps } from "@tabler/icons";
-import {
-  BackEnd,
-  Design,
-  FrontEnd,
-  StudyBackEnd,
-  StudyFrontEnd,
-  StudyUtilities,
-  TabSkills,
-  Utilities,
-} from "../utils/data";
 import Image from "next/image";
 import { FunctionComponent, useState } from "react";
 import prisma from "../assets/prisma.svg";
@@ -18,6 +8,17 @@ import javascript from "../assets/javascript.svg";
 import figma from "../assets/figma.svg";
 import { SkillCard } from "../components/SkillCard";
 import { FeaturedProject } from "../components/FeaturedProject";
+import {
+  BackEnd,
+  Design,
+  FrontEnd,
+  StudyBackEnd,
+  StudyFrontEnd,
+  StudyUtilities,
+  useTabSkills,
+  Utilities,
+} from "../utils/data";
+import { useTranslation } from "react-i18next";
 
 interface Props {}
 
@@ -33,9 +34,12 @@ function Icons({ icon, ...props }: IIconsProps) {
 export function Skills({}: Props) {
   const [activeTab, setActiveTab] = useState<string | null>("frontEnd");
 
+  const tabSkills = useTabSkills();
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col justify-center lg:justify-start items-center mx-10 lg:mx-3 xl:mx-10 dark:text-white lg:gap-5 min-h-screen">
-      <Title className="lg:mt-[4.2rem]">Skills</Title>
+      <Title className="lg:mt-[4.2rem]">{t("pages.skills")}</Title>
       <Tabs
         value={activeTab}
         onTabChange={setActiveTab}
@@ -43,7 +47,7 @@ export function Skills({}: Props) {
         orientation="vertical"
         className="flex flex-col lg:min-h-[19rem] mt-5 lg:flex-row w-full justify-center items-center lg:items-start lg:justify-between">
         <Tabs.List className="flex lg:flex-col items-center lg:items-start lg:w-48">
-          {TabSkills?.map((skill, i) => (
+          {tabSkills?.map((skill, i) => (
             <Tabs.Tab
               key={i}
               className={
@@ -61,7 +65,6 @@ export function Skills({}: Props) {
             </Tabs.Tab>
           ))}
         </Tabs.List>
-
         <Tabs.Panel className="w-full lg:w-4/5" value="frontEnd">
           <Flex className="flex-col items-center mt-5 gap-5 lg:mt-0 lg:gap-0 lg:flex-row w-full justify-between lg:items-start">
             <Box className="flex flex-col gap-4 items-center">

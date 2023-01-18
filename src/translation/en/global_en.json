@@ -1,0 +1,51 @@
+{
+  "language": {
+    "pt": "Portuguese",
+    "en": "English"
+  },
+  "pages": {
+    "home": "Home",
+    "about": "About",
+    "experiences": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Hello I'm,",
+    "description": "I have a degree in Systems Analysis and Development",
+    "first": "Professional",
+    "second": "Front-End",
+    "third": "Developer",
+    "button": "Hire me"
+  },
+  "tabSkills": {
+    "title": "Utilities",
+    "buttonGithub": "Github Code",
+    "buttonProject": "View Project"
+  },
+  "contactInfo": {
+    "labelEmail": "Your Email",
+    "labelSubject": "Subject",
+    "labelMessage": "Your Message",
+    "placeholderMessage": "Please include all relevant information",
+    "title": "Get in Touch",
+    "submit": "Send Message",
+    "Email": "Email",
+    "Phone": "Phone",
+    "Address": "Address",
+    "Working Hours": "Working Hours",
+    "Value": "08 a.m. - 08 p.m.",
+    "footer": "All rights reserved."
+  },
+  "projectsData": {
+    "buttonGithub": "Github Code",
+    "buttonProject": "View Project",
+    "title0": "Todo List",
+    "description0": "A way to share your github profile with anyone passing by the site.",
+    "title1": "Git Repositories",
+    "description1": "A way to share your github profile with anyone passing by the site.",
+    "title2": "Crud",
+    "description2": "A way to share your github profile with anyone passing by the site."
+  }
+}

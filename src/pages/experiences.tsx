@@ -1,12 +1,14 @@
 import { Badge, Box, Text, Timeline, Title } from "@mantine/core";
 import { IconBriefcase, IconSearch } from "@tabler/icons";
+import { useTranslation } from "react-i18next";
 
 interface Props {}
 
 export function Experiences({}: Props) {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col justify-center items-center dark:text-white gap-5 min-h-screen">
-      <Title className="lg:mt-4">Experiences</Title>
+      <Title className="lg:mt-4">{t("pages.experiences")}</Title>
       <Timeline
         active={1}
         bulletSize={40}
