@@ -1,7 +1,7 @@
 import { Box, Text, Title } from "@mantine/core";
 import Image from "next/image";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import { Button } from "../components/Button";
+import { Button } from "./Button";
 import { IconRubberStamp } from "@tabler/icons";
 import { useTranslation } from "react-i18next";
 

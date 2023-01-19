@@ -2,7 +2,7 @@ import { Carousel, Embla } from "@mantine/carousel";
 import { Box, Progress, Title } from "@mantine/core";
 import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Slide } from "../components/Slide";
+import { Slide } from "./Slide";
 import { ProjectsData } from "../utils/data";
 
 export function Projects() {

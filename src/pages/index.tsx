@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Header } from "../components/Header";
-import { About } from "./about";
-import { Contact } from "./contact";
-import { Experiences } from "./experiences";
-import { Home } from "./home";
-import { Projects } from "./projects";
-import { Skills } from "./skills";
+import { About } from "../components/about";
+import { Contact } from "../components/contact";
+import { Experiences } from "../components/experiences";
+import { Home } from "../components/home";
+import { Projects } from "../components/projects";
+import { Skills } from "../components/skills";
 import { InView, useInView } from "react-intersection-observer";
 
 export default function Index() {

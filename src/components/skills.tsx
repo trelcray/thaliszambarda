@@ -7,8 +7,8 @@ import react from "../assets/react.svg";
 import tailwind from "../assets/tailwind.svg";
 import typescript from "../assets/typescript.svg";
 import figma from "../assets/figma.svg";
-import { SkillCard } from "../components/SkillCard";
-import { FeaturedProject } from "../components/FeaturedProject";
+import { SkillCard } from "./SkillCard";
+import { FeaturedProject } from "./FeaturedProject";
 import {
   BackEnd,
   Design,

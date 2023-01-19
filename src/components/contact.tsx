@@ -15,8 +15,8 @@ import {
   IconX,
 } from "@tabler/icons";
 import { FormEvent, useRef, useState } from "react";
-import { Button } from "../components/Button";
-import { TextInput } from "../components/TextInput";
+import { Button } from "./Button";
+import { TextInput } from "./TextInput";
 import emailjs from "@emailjs/browser";
 import { contactInfo } from "../utils/data";
 import { useTranslation } from "react-i18next";
