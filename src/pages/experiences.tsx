@@ -2,9 +2,7 @@ import { Badge, Box, Text, Timeline, Title } from "@mantine/core";
 import { IconBriefcase, IconSearch } from "@tabler/icons";
 import { useTranslation } from "react-i18next";
 
-interface Props {}
-
-export function Experiences({}: Props) {
+export function Experiences() {
   const { t } = useTranslation();
   return (
     <div className="flex flex-col justify-center items-center dark:text-white gap-5 min-h-screen">
@@ -18,25 +16,26 @@ export function Experiences({}: Props) {
         className="flex flex-col mx-2">
         <Timeline.Item
           lineVariant="dashed"
-          title="Searching a Job"
-          bullet={<IconSearch size={28} className="text-white dark:text-black" />}
+          title={t("experience.title1")}
+          bullet={
+            <IconSearch size={28} className="text-white dark:text-black" />
+          }
           className="flex dark:text-white pb-8">
           <Text size="xs" mt={4}>
-            Now
+            {t("experience.period1")}
           </Text>
         </Timeline.Item>
         <Timeline.Item
           bullet={<IconBriefcase size={28} />}
           className="dark:text-white pb-8"
-          title="Front-End Developer"
+          title={t("experience.title2")}
           align="left">
           <Text color="dimmed" size="sm">
             FAPERGS
           </Text>
-          <Text size="xs">ago de 2021 - ago de 2022</Text>
+          <Text size="xs">{t("experience.period2")}</Text>
           <Text color="dimmed" size="xs" mt={12}>
-            Mediação da aprendizagem online: novas possibilidades educativas
-            apoiadas por tecnologias digitais
+            {t("experience.description2")}
           </Text>
           <Box className="flex flex-wrap gap-1" mt={6}>
             <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">
@@ -68,16 +67,14 @@ export function Experiences({}: Props) {
         <Timeline.Item
           bullet={<IconBriefcase size={28} />}
           className="dark:text-white"
-          title="Front-End Developer"
+          title={t("experience.title3")}
           align="left">
           <Text color="dimmed" size="sm">
             FAPERGS
           </Text>
-          <Text size="xs">ago de 2020 - ago de 2021</Text>
+          <Text size="xs">{t("experience.period3")}</Text>
           <Text color="dimmed" size="xs" mt={12}>
-            Prática educativa disruptiva: investigando possibilidades
-            renovadoras dos processos de ensino e aprendizagem na educação e
-            tecnologias
+            {t("experience.description3")}
           </Text>
           <Box className="flex flex-wrap gap-1" mt={6}>
             <Badge className="text-cyan-400 shadow-sm shadow-cyan-500/50 bg-transparent border border-gray-200/50">

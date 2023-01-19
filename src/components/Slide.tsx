@@ -1,19 +1,8 @@
 import { Anchor, Flex, Title } from "@mantine/core";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
+import { ISlideProps } from "../@types/global";
 import { Button } from "./Button";
-
-interface ISlideProps {
-  title: string;
-  description: string;
-  urlGithub?: string;
-  urlProject?: string;
-  urlImage: string;
-  urlSkill1: string;
-  urlSkill2: string;
-  urlSkill3: string;
-  urlSkill4: string;
-}
 
 export function Slide({
   title,
@@ -38,8 +27,10 @@ export function Slide({
           src={urlImage}
           alt="developer cartoon"
         />
-        <div className="hidded duration-500 ease-in-out hidden text-center w-full text-white px-2 justify-end">
-          <p className="text-xs">{description}</p>
+        <div className="hidded duration-500 ease-in-out hidden text-center w-full text-white p-2 justify-end">
+          <p className="text-black dark:text-white text-xs w-full">
+            {description}
+          </p>
         </div>
       </div>
       <Flex className="w-full h-full pb-1 justify-around max-h-24">
@@ -75,12 +66,14 @@ export function Slide({
             className="hidden no-underline"
             href={urlProject}
             target="_blank">
-            <Button className="p-1 bg-cyan-400 border-cyan-400 hover:bg-cyan-500 hover:border-cyan-500 dark:hover:bg-cyan-500 dark:hover:border-cyan-500">
-              <p className="text-white text-xs md:text-base">{t("projectsData.buttonProject")}</p>
+            <Button className="min-w-[8.5rem] p-1 bg-cyan-400 border-cyan-400 hover:bg-cyan-500 hover:border-cyan-500 dark:hover:bg-cyan-500 dark:hover:border-cyan-500">
+              <p className="text-white text-xs md:text-base">
+                {t("projectsData.buttonProject")}
+              </p>
             </Button>
           </Anchor>
           <Anchor href={urlGithub} target="_blank" className="no-underline">
-            <Button className="text-white p-1 text-xs md:text-base">
+            <Button className="min-w-[8.5rem] text-white p-1 text-xs md:text-base">
               {t("projectsData.buttonGithub")}
             </Button>
           </Anchor>

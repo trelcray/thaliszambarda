@@ -1,11 +1,8 @@
 import { TextInput as Input, TextInputProps } from "@mantine/core";
 import clsx from "clsx";
+import { ITextInputProps } from "../@types/global";
 
-interface Props extends TextInputProps {
-  className?: string;
-}
-
-export function TextInput({ className, ...props }: Props) {
+export function TextInput({ className, ...props }: ITextInputProps) {
   return (
     <Input
       className={clsx(

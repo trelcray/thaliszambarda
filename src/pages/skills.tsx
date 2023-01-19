@@ -1,10 +1,11 @@
 import { Box, Flex, Tabs, Text, Title } from "@mantine/core";
-import { TablerIconProps } from "@tabler/icons";
 import Image from "next/image";
-import { FunctionComponent, useState } from "react";
-import prisma from "../assets/prisma.svg";
-import node from "../assets/node.svg";
-import javascript from "../assets/javascript.svg";
+import { useState } from "react";
+import redux from "../assets/redux.svg";
+import html5 from "../assets/html5.svg";
+import react from "../assets/react.svg";
+import tailwind from "../assets/tailwind.svg";
+import typescript from "../assets/typescript.svg";
 import figma from "../assets/figma.svg";
 import { SkillCard } from "../components/SkillCard";
 import { FeaturedProject } from "../components/FeaturedProject";
@@ -19,19 +20,14 @@ import {
   Utilities,
 } from "../utils/data";
 import { useTranslation } from "react-i18next";
-
-interface Props {}
-
-interface IIconsProps extends TablerIconProps {
-  icon: FunctionComponent;
-}
+import { IIconsProps } from "../@types/global";
 
 function Icons({ icon, ...props }: IIconsProps) {
   const Icon = icon;
   return <Icon {...props} />;
 }
 
-export function Skills({}: Props) {
+export function Skills() {
   const [activeTab, setActiveTab] = useState<string | null>("frontEnd");
 
   const tabSkills = useTabSkills();
@@ -68,7 +64,7 @@ export function Skills({}: Props) {
         <Tabs.Panel className="w-full lg:w-4/5" value="frontEnd">
           <Flex className="flex-col items-center mt-5 gap-5 lg:mt-0 lg:gap-0 lg:flex-row w-full justify-between lg:items-start">
             <Box className="flex flex-col gap-4 items-center">
-              <Title order={4}>Technologies in use</Title>
+              <Title order={4}>{t("skills.use")}</Title>
               <Flex className="gap-2 lg:gap-4 text-xs xl:text-base items-center w-full justify-evenly lg:max-w-[16rem] xl:max-w-xs flex-wrap">
                 {FrontEnd?.map((skill, i) => (
                   <SkillCard
@@ -82,7 +78,7 @@ export function Skills({}: Props) {
               </Flex>
             </Box>
             <Box className="flex flex-col items-center justify-center gap-4">
-              <Title order={4}>In Study</Title>
+              <Title order={4}>{t("skills.study")}</Title>
               <Flex className="gap-2 lg:gap-4 text-xs xl:text-base items-center justify-evenly lg:max-w-[15rem] flex-wrap">
                 {StudyFrontEnd?.map((skill, i) => (
                   <SkillCard
@@ -96,20 +92,28 @@ export function Skills({}: Props) {
               </Flex>
             </Box>
             <FeaturedProject
-              description="A way to share your github profile with anyone passing by the site."
-              title="Dev list server">
+              urlGithub="https://github.com/trelcray/github-repositories"
+              urlProject="https://trelcray-github-io.vercel.app/"
+              src="/gitRepositories.svg"
+              description={t("projectsData.description1")}
+              title={t("projectsData.title1")}>
               <Image
-                src={node}
+                src={react}
                 className="bg-gray-900 dark:bg-white rounded-lg h-8 w-8 p-[.2rem]"
                 alt="it's node logo"
               />
               <Image
-                src={prisma}
+                src={tailwind}
                 className="bg-gray-900 dark:bg-white rounded-lg h-8 w-8 p-1"
                 alt="it's prisma logo"
               />
               <Image
-                src={javascript}
+                src={typescript}
+                className="bg-gray-900 dark:bg-white rounded-lg h-8 w-8 p-1"
+                alt="it's javascript logo"
+              />
+              <Image
+                src={html5}
                 className="bg-gray-900 dark:bg-white rounded-lg h-8 w-8 p-1"
                 alt="it's javascript logo"
               />
@@ -117,7 +121,7 @@ export function Skills({}: Props) {
           </Flex>
         </Tabs.Panel>
 
-        <Tabs.Panel className="w-full lg:w-4/5" value="backEnd">
+        {/* <Tabs.Panel className="w-full lg:w-4/5" value="backEnd">
           <Flex className="flex-col items-center mt-5 gap-5 lg:mt-0 lg:gap-0 lg:flex-row w-full justify-between lg:items-start">
             <Box className="flex flex-col gap-4 items-center">
               <Title order={4}>Technologies in use</Title>
@@ -167,7 +171,7 @@ export function Skills({}: Props) {
               />
             </FeaturedProject>
           </Flex>
-        </Tabs.Panel>
+        </Tabs.Panel> */}
 
         <Tabs.Panel className="w-full lg:w-5/6" value="design">
           <Flex className="w-full flex-col lg:flex-row gap-5 lg:gap-0 mt-5 lg:mt-0 items-center lg:items-start justify-between">
@@ -186,8 +190,11 @@ export function Skills({}: Props) {
               </Flex>
             </Box>
             <FeaturedProject
-              description="A way to share your github profile with anyone passing by the site."
-              title="Dev list server">
+              src="/portfolio.svg"
+              urlGithub="https://github.com/trelcray/thaliszambarda"
+              urlProject=""
+              description={t("projectsData.description3")}
+              title={t("projectsData.title3")}>
               <Image
                 src={figma}
                 className="bg-white rounded-lg h-8 w-8 p-[.2rem]"
@@ -228,20 +235,28 @@ export function Skills({}: Props) {
               </Flex>
             </Box>
             <FeaturedProject
-              description="A way to share your github profile with anyone passing by the site."
-              title="Dev list server">
+              urlGithub="https://github.com/trelcray/todoList"
+              urlProject="https://todo-list-trelcray.vercel.app/"
+              src="/todoList.svg"
+              description={t("projectsData.description0")}
+              title={t("projectsData.title0")}>
               <Image
-                src={node}
+                src={react}
                 className="bg-white rounded-lg h-8 w-8 p-[.2rem]"
                 alt="it's node logo"
               />
               <Image
-                src={prisma}
+                src={tailwind}
                 className="bg-white rounded-lg h-8 w-8 p-1"
                 alt="it's prisma logo"
               />
               <Image
-                src={javascript}
+                src={typescript}
+                className="bg-white rounded-lg h-8 w-8 p-1"
+                alt="it's javascript logo"
+              />
+              <Image
+                src={redux}
                 className="bg-white rounded-lg h-8 w-8 p-1"
                 alt="it's javascript logo"
               />

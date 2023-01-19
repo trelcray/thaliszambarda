@@ -6,10 +6,10 @@ import { I18nextProvider } from "react-i18next";
 
 export default function App() {
   return (
-      <I18nextProvider i18n={i18n}>
-        <MantineProvider withGlobalStyles withNormalizeCSS>
-          <Index />
-        </MantineProvider>
-      </I18nextProvider>
+    <I18nextProvider i18n={i18n}>
+      <MantineProvider withGlobalStyles withNormalizeCSS>
+        <Index />
+      </MantineProvider>
+    </I18nextProvider>
   );
 }

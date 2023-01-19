@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { UnstyledButton, Menu, Image, Group } from "@mantine/core";
 import { IconChevronDown } from "@tabler/icons";
 import { changeLanguage } from "i18next";
 import { language } from "../utils/data";
 import { useTranslation } from "react-i18next";
+import { i18n } from "../i18n";
+import Cookies from "js-cookie";
 
 export function LanguagePicker() {
   const [opened, setOpened] = useState(false);
@@ -23,12 +25,34 @@ export function LanguagePicker() {
         />
       }
       onClick={() => {
-        setSelected(item), changeLanguage(item.lng);
+        setSelected(item);
+        changeLanguage(item.lng);
+        Cookies.set("language", item.lng);
       }}
       key={item.label}>
       {t(item.label)}
     </Menu.Item>
   ));
+
+  useEffect(() => {
+    const currentLanguage = i18n.language;
+    const selectedLanguage =
+      language.find((item) => item.lng === currentLanguage) || language[0];
+    setSelected(selectedLanguage);
+  }, []);
+
+  useEffect(() => {
+    const savedLanguage = Cookies.get("language");
+    if (savedLanguage) {
+      const selectedLanguage = language.find(
+        (item) => item.lng === savedLanguage
+      );
+      if (selectedLanguage) {
+        i18n.changeLanguage(savedLanguage);
+        setSelected(selectedLanguage);
+      }
+    }
+  }, []);
 
   return (
     <Menu

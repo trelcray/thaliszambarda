@@ -5,9 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Slide } from "../components/Slide";
 import { ProjectsData } from "../utils/data";
 
-interface Props {}
-
-export function Projects({}: Props) {
+export function Projects() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [embla, setEmbla] = useState<Embla | null>(null);
 

@@ -19,46 +19,19 @@ import jest from "../assets/jest.svg";
 import {
   IconAppWindow,
   IconAt,
-  IconDatabase,
   IconMapPin,
   IconPhoneCall,
   IconSunLow,
   IconTool,
   IconTools,
-  TablerIconProps,
 } from "@tabler/icons";
-import { FunctionComponent, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-
-export interface IDataProps {
-  skillImage: string;
-  title: string;
-  alt: string;
-  className: string;
-}
-
-export interface ITabSkillsProps {
-  value: string;
-  icon: FunctionComponent;
-  title: string;
-}
-export interface IContactInfoProps {
-  value: string;
-  icon: FunctionComponent;
-  title: string;
-}
-
-export interface IProjectProps {
-  title: string;
-  description: string;
-  urlGithub: string;
-  urlProject: string;
-  urlImage: string;
-  urlSkill1: string;
-  urlSkill2: string;
-  urlSkill3: string;
-  urlSkill4: string;
-}
+import {
+  IContactInfoProps,
+  IDataProps,
+  IProjectProps,
+  ITabSkillsProps,
+} from "../@types/global";
 
 export const FrontEnd: IDataProps[] = [
   {
@@ -196,18 +169,18 @@ export const StudyUtilities: IDataProps[] = [
 
 export const useTabSkills = () => {
   const { t } = useTranslation();
-  const title = t("tabSkills.title") || "";
+  const title = t("skills.title") || "";
   const tabSkills: ITabSkillsProps[] = [
     {
       title: "Front-End",
       icon: IconAppWindow,
       value: "frontEnd",
     },
-    {
+    /* {
       title: "Back-End",
       icon: IconDatabase,
       value: "backEnd",
-    },
+    }, */
     {
       title: "Design",
       icon: IconTools,
@@ -249,7 +222,7 @@ export const ProjectsData: IProjectProps[] = [
   {
     title: "projectsData.title0",
     description: "projectsData.description0",
-    urlGithub: "",
+    urlGithub: "https://github.com/trelcray/todoList",
     urlProject: "https://todo-list-trelcray.vercel.app/",
     urlImage: "/todoList.svg",
     urlSkill1: react,
@@ -260,7 +233,7 @@ export const ProjectsData: IProjectProps[] = [
   {
     title: "projectsData.title1",
     description: "projectsData.description1",
-    urlGithub: "",
+    urlGithub: "https://github.com/trelcray/github-repositories",
     urlProject: "https://trelcray-github-io.vercel.app/",
     urlImage: "/gitRepositories.svg",
     urlSkill1: react,
@@ -271,7 +244,7 @@ export const ProjectsData: IProjectProps[] = [
   {
     title: "projectsData.title2",
     description: "projectsData.description2",
-    urlGithub: "",
+    urlGithub: "https://github.com/trelcray/teste-athenas",
     urlProject: "https://crud-challenge-athenas.vercel.app/",
     urlImage: "/crud.svg",
     urlSkill1: react,
@@ -292,5 +265,5 @@ export const data = [
 
 export const language = [
   { label: "language.en", image: "Usa-flag.png", lng: "en" },
-  { label: "language.pt", image: "Brazil-flag.png", lng: "pt"},
+  { label: "language.pt", image: "Brazil-flag.png", lng: "pt" },
 ];

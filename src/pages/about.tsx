@@ -3,9 +3,7 @@ import { IconCake, IconArrowBarToDown } from "@tabler/icons";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
-interface Props {}
-
-export function About({}: Props) {
+export function About() {
   const { t } = useTranslation();
 
   function getAge(dateString: string) {
@@ -34,26 +32,12 @@ export function About({}: Props) {
           quality={100}
         />
         <section className="max-w-xl">
-          <Title>Um pouco sobre mim:</Title>
+          <Title>{t("about.title")}</Title>
           <section className="flex flex-col gap-2 mt-2">
-            <Text>Olá, me chamo Thalis Viana Zambarda!</Text>
-            <Text>
-              Sou apaixonado por tecnologia desde a adolescência, e acabei
-              cursado Tecnologia em análise e desenvolvimento de sistemas no
-              IFSUL, onde me envolvi ainda mais com programação em projetos
-              extracurriculares.
-            </Text>
-            <Text>
-              Movido por essa paixão aprendi a stack React.js Node.js e
-              Typescript principalmente com os conteúdos da RocketSeat e acabei
-              conseguindo um trabalho em um projeto como front-end durante a
-              pandemia onde desenvolvi minhas habilidades de soft e hard skills.
-            </Text>
-            <Text>
-              Trabalhei principalmente com React.js no desenvolvimento de
-              dashboards e Node.js na criação de api rest, ambas as tecnologias
-              utilizadas em conjunto com JavaScript.
-            </Text>
+            <Text>{t("about.description")}</Text>
+            <Text>{t("about.paragraph1")}</Text>
+            <Text>{t("about.paragraph2")}</Text>
+            <Text>{t("about.paragraph3")}</Text>
           </section>
         </section>
       </Box>
@@ -62,17 +46,21 @@ export function About({}: Props) {
           <Card className="hover:-translate-y-1 hover:scale-110 cursor-pointer bg-gray-900 text-white dark:bg-white dark:text-black">
             <Box className="flex gap-2">
               <IconArrowBarToDown />
-              <Text> Resume:</Text>
+              <Text> {t("about.buttonTitle")}</Text>
             </Box>
-            <Text className="font-semibold">Click to open</Text>
+            <Text className="font-semibold">
+              {t("about.buttonDescription")}
+            </Text>
           </Card>
         </Anchor>
         <Card className="hover:-translate-y-1 hover:scale-110 bg-gray-900 text-white dark:bg-white dark:text-black">
           <Box className="flex gap-2">
             <IconCake />
-            <Text>Birth:</Text>
+            <Text>{t("about.buttonTitle2")}</Text>
           </Box>
-          <Text className="font-semibold">April, 1999 ({birthDate} years)</Text>
+          <Text className="font-semibold">
+            {t("about.birthDate")} ({birthDate} {t("about.years")})
+          </Text>
         </Card>
       </Box>
     </div>

@@ -17,6 +17,13 @@ export default function Index() {
   const [inViewContact, setInViewContact] = useState(false);
   const [index, setIndex] = useState(0);
 
+  const [ref] = useInView();
+  const [ref2] = useInView();
+  const [ref3] = useInView();
+  const [ref4] = useInView();
+  const [ref5] = useInView();
+  const [ref6] = useInView();
+
   useEffect(() => {
     if (inViewHome) {
       setIndex(0);
@@ -40,18 +47,9 @@ export default function Index() {
     inViewContact,
   ]);
 
-  const [ref] = useInView();
-  const [ref2] = useInView();
-  const [ref3] = useInView();
-  const [ref4] = useInView();
-  const [ref5] = useInView();
-  const [ref6] = useInView();
-
   return (
-    <div className="flex flex-col gap-10 bg-repeat min-h-screen bg-white dark:bg-transparent">
-      <Header
-        inView={index}
-      />
+    <div className="flex flex-col gap-16 bg-repeat min-h-screen bg-white dark:bg-transparent">
+      <Header inView={index} />
       <InView onChange={(inView) => setInViewHome(inView)}>
         <section id="home" ref={ref}>
           <Home />

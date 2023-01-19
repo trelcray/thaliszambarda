@@ -19,10 +19,35 @@
     "third": "Developer",
     "button": "Hire me"
   },
-  "tabSkills": {
+  "about": {
+    "title": "A little about myself:",
+    "description": "Hello, my name is Thalis Viana Zambarda!",
+    "paragraph1": "I've been passionate about technology since I was a teenager, and I ended up studying Technology in analysis and systems development at IFSUL, where I got even more involved with programming in extracurricular projects.",
+    "paragraph2": "Driven by this passion, I learned the React.js Node.js and Typescript stack mainly with RocketSeat content and ended up getting a job on a front-end project during the pandemic where I developed my soft and hard skills.",
+    "paragraph3": "I worked mainly with React.js in the development of dashboards and Node.js in the creation of rest api, both technologies used in conjunction with JavaScript.",
+    "buttonTitle": "Resume:",
+    "buttonDescription": "Click to Open",
+    "buttonTitle2": "Birth:",
+    "birthDate": "April, 1999",
+    "years": "Years"
+  },
+  "experience": {
+    "title1": "Searching a Job",
+    "period1": "Now",
+    "title2": "Front-End Developer",
+    "period2": "aug 2021 - aug 2022",
+    "description2": "Mediation of online learning: new educational possibilities supported by digital technologies",
+    "title3": "Front-End Developer",
+    "period3": "aug 2020 - aug 2021",
+    "description3": "Disruptive educational practice: investigating renewing possibilities of teaching and learning processes in education and technologies"
+  },
+  "skills": {
     "title": "Utilities",
     "buttonGithub": "Github Code",
-    "buttonProject": "View Project"
+    "buttonProject": "View Project",
+    "use": "Technologies in use",
+    "study": "In study",
+    "featured": "Featured project"
   },
   "contactInfo": {
     "labelEmail": "Your Email",
@@ -31,6 +56,7 @@
     "placeholderMessage": "Please include all relevant information",
     "title": "Get in Touch",
     "submit": "Send Message",
+    "contact": "Contact Information",
     "Email": "Email",
     "Phone": "Phone",
     "Address": "Address",
@@ -42,10 +68,12 @@
     "buttonGithub": "Github Code",
     "buttonProject": "View Project",
     "title0": "Todo List",
-    "description0": "A way to share your github profile with anyone passing by the site.",
+    "description0": "Application for creating todo list.",
     "title1": "Git Repositories",
-    "description1": "A way to share your github profile with anyone passing by the site.",
+    "description1": "Application for listing my github repositories.",
     "title2": "Crud",
-    "description2": "A way to share your github profile with anyone passing by the site."
+    "description2": "Challenge for front-end vacancy, where was the creation of crud.",
+    "title3": "Portifolio",
+    "description3": "Application to demonstrate my knowledge in programming."
   }
 }

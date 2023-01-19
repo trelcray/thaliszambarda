@@ -13,22 +13,16 @@ import {
   IconBrandLinkedin,
   IconCheck,
   IconX,
-  TablerIconProps,
 } from "@tabler/icons";
-import { FormEvent, FunctionComponent, useRef, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import { Button } from "../components/Button";
 import { TextInput } from "../components/TextInput";
 import emailjs from "@emailjs/browser";
 import { contactInfo } from "../utils/data";
 import { useTranslation } from "react-i18next";
+import { IIconsProps } from "../@types/global";
 
-interface Props {}
-
-interface IIconsProps extends TablerIconProps {
-  icon: FunctionComponent;
-}
-
-export function Contact({}: Props) {
+export function Contact() {
   const [isHiddenSuccess, setIsHiddenSuccess] = useState(true);
   const [isHiddenError, setIsHiddenError] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
@@ -78,9 +72,9 @@ export function Contact({}: Props) {
     <div className="relative flex flex-col gap-5 mx-5 justify-center items-center min-h-screen">
       <Title className="dark:text-white lg:mt-16">{t("pages.contact")}</Title>
       <div className="flex flex-col md:flex-row justify-evenly w-full text-white">
-        <div className="bg-cyan-500 rounded-xl p-6">
+        <div className="flex justify-center items-center flex-col bg-cyan-500 rounded-xl p-6">
           <Title order={4} className="text-white">
-            Contact information
+            {t("contactInfo.contact")}
           </Title>
 
           <div className="flex flex-col justify-center gap-4 mt-8 mb-20">
@@ -127,7 +121,7 @@ export function Contact({}: Props) {
             />
             <Group position="right">
               <Button type="submit" loading={isLoading}>
-              {t("contactInfo.submit")}
+                {t("contactInfo.submit")}
               </Button>
             </Group>
           </div>

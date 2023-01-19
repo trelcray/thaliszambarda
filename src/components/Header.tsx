@@ -13,14 +13,11 @@ import { useLocalStorage } from "@mantine/hooks";
 import { IconSun, IconMoonStars } from "@tabler/icons";
 import { FormEvent, memo, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { IHeaderProps } from "../@types/global";
 import { data } from "../utils/data";
 import { LanguagePicker } from "./LanguagePicker";
 
-interface Props {
-  inView: number;
-}
-
-export const Header = memo(({ inView }: Props) => {
+export const Header = memo(({ inView }: IHeaderProps) => {
   const [theme, setTheme] = useLocalStorage<ColorScheme>({
     key: "mantine-color-scheme",
     defaultValue: "light",
@@ -154,7 +151,7 @@ export const Header = memo(({ inView }: Props) => {
                     variant="text"
                     className={
                       index === active
-                        ? "text-cyan-400 dark:text-blue-500"
+                        ? "text-cyan-400"
                         : "text-gray-700 dark:text-white"
                     }>
                     {t(item.label)}

@@ -19,10 +19,43 @@
     "third": "Profissional",
     "button": "Contrate-me"
   },
-  "tabSkills": {
+  "about": {
+    "title": "Um pouco sobre mim:",
+    "description": "Olá, meu nome é Thalis Viana Zambarda!",
+    "paragraph1": "Sou apaixonado por tecnologia desde a adolescência, e acabei cursado Tecnologia em análise e desenvolvimento de sistemas no IFSUL, onde me envolvi ainda mais com programação em projetos extracurriculares.",
+    "paragraph2": "Movido por essa paixão aprendi a stack React.js Node.js e Typescript principalmente com os conteúdos da RocketSeat e acabei conseguindo um trabalho em um projeto como front-end durante a pandemia onde desenvolvi minhas habilidades de soft e hard skills.",
+    "paragraph3": "Trabalhei principalmente com React.js no desenvolvimento de dashboards e Node.js na criação de api rest, ambas as tecnologias utilizadas em conjunto com JavaScript.",
+    "buttonTitle": "Currículo",
+    "buttonDescription": "Clique para abrir",
+    "buttonTitle2": "Aniversário:",
+    "birthDate": "Abril, 1999",
+    "years": "Anos"
+  },
+  "experience": {
+    "title1": "Procurando um emprego",
+    "period1": "Agora",
+    "title2": "Desenvolvedor Front-End",
+    "period2": "ago de 2021 - ago de 2022",
+    "description2": "Mediação da aprendizagem online: novas possibilidades educativas apoiadas por tecnologias digitais",
+    "title3": "Desenvolvedor Front-End",
+    "period3": "ago de 2020 - ago de 2021",
+    "description3": "Prática educativa disruptiva: investigando possibilidades renovadoras dos processos de ensino e aprendizagem na educação e tecnologias"
+  },
+  "skills": {
     "title": "Utilitários",
     "buttonGithub": "Código no Github",
-    "buttonProject": "Veja o Projeto"
+    "buttonProject": "Veja o Projeto",
+    "use": "Tecnologias em uso",
+    "study": "Em estudo",
+    "featured": "Projeto em destaque",
+    "titleProjectFront": "",
+    "descriptionProjectFront": "",
+    "titleProjectBack": "",
+    "descriptionProjectBack": "",
+    "titleProjectDesign": "",
+    "descriptionProjectDesign": "",
+    "titleProjectUtilities": "",
+    "descriptionProjectUtilities": ""
   },
   "contactInfo": {
     "labelEmail": "Seu Email",
@@ -31,6 +64,7 @@
     "placeholderMessage": "Por favor inclua todas as informações relevantes",
     "title": "Entrar em Contato",
     "submit": "Enviar Mensagem",
+    "contact": "Informações de contato",
     "Email": "Email",
     "Phone": "Telefone",
     "Address": "Endereço",
@@ -42,10 +76,12 @@
     "buttonGithub": "Código no Github",
     "buttonProject": "Veja o Projeto",
     "title0": "Lista de Tarefas",
-    "description0": "A way to share your github profile with anyone passing by the site.",
+    "description0": "Aplicação para criação de lista de tarefas.",
     "title1": "Repositorios do github",
-    "description1": "A way to share your github profile with anyone passing by the site.",
+    "description1": "Aplicação para listagem de repositórios do meu github.",
     "title2": "CRUD",
-    "description2": "A way to share your github profile with anyone passing by the site."
+    "description2": "Desafio para vaga de front-end, onde qual era a criação de um crud.",
+    "title3": "Portifólio",
+    "description3": "Aplicação para demonstrar meus conhecimentos em programação."
   }
 }

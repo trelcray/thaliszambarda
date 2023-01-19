@@ -1,11 +1,6 @@
 import { Button as PrimitiveButton, ButtonProps } from "@mantine/core";
-import { ReactNode } from "react";
 import clsx from "clsx";
-
-interface IButtonProps extends ButtonProps {
-  children: ReactNode;
-  className?: string;
-}
+import { IButtonProps } from "../@types/global";
 
 export function Button({ children, className, ...props }: IButtonProps) {
   return (
@@ -15,8 +10,7 @@ export function Button({ children, className, ...props }: IButtonProps) {
         className
       )}
       variant="outline"
-      {...props}
-      >
+      {...props}>
       {children}
     </PrimitiveButton>
   );

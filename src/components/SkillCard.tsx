@@ -1,12 +1,6 @@
 import { Box } from "@mantine/core";
 import Image from "next/image";
-
-interface ISkillCardProps {
-  skillImage: string;
-  className: string;
-  alt: string;
-  title: string;
-}
+import { ISkillCardProps } from "../@types/global";
 
 export function SkillCard({
   alt,

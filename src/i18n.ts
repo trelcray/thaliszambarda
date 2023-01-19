@@ -5,8 +5,6 @@ import enus from "./translation/en/global_en.json";
 import ptbr from "./translation/pt/global_pt.json";
 
 i18n
-  // detect user language
-  .use(LanguageDetector)
   // pass the i18n instance to react-i18next.
   .use(initReactI18next)
   // init i18next
