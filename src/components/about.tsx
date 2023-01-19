@@ -22,7 +22,7 @@ export function About() {
   return (
     <div className="flex flex-col mx-2 text-center lg:text-start items-center justify-center gap-10 dark:text-white min-h-screen">
       <Title className="lg:mt-16">{t("pages.about")}</Title>
-      <Box className="flex flex-col lg:flex-row items-center lg:justify-evenly w-full">
+      <Box className="flex gap-10 flex-col lg:flex-row items-center lg:justify-evenly w-full">
         <Image
           src="/eu.jpeg"
           alt="my image"

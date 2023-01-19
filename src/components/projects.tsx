@@ -25,7 +25,7 @@ export function Projects() {
   }, [embla, handleScroll]);
 
   return (
-    <div className="flex flex-col justify-center items-center mx-2 lg:mx-3 xl:mx-10 dark:text-white lg:gap-16 min-h-screen">
+    <div className="flex flex-col justify-center items-center mx-2 lg:mx-3 xl:mx-10 gap-10 dark:text-white lg:gap-16 min-h-screen">
       <Title className="dark:text-white mt-6">{t("pages.projects")}</Title>
       <Box className="xl:w-full">
         <Carousel

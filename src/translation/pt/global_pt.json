@@ -11,6 +11,12 @@
     "projects": "Projetos",
     "contact": "Contato"
   },
+  "header": {
+    "navigation": "Navegação",
+    "settings": "Configurações",
+    "dark": "Modo Escuro",
+    "light": "Modo Claro"
+  },
   "home": {
     "title": "Olá eu sou,",
     "description": "Possuo graduação em Análise e desenvolvimento de sistemas",
@@ -47,15 +53,7 @@
     "buttonProject": "Veja o Projeto",
     "use": "Tecnologias em uso",
     "study": "Em estudo",
-    "featured": "Projeto em destaque",
-    "titleProjectFront": "",
-    "descriptionProjectFront": "",
-    "titleProjectBack": "",
-    "descriptionProjectBack": "",
-    "titleProjectDesign": "",
-    "descriptionProjectDesign": "",
-    "titleProjectUtilities": "",
-    "descriptionProjectUtilities": ""
+    "featured": "Projeto em destaque"
   },
   "contactInfo": {
     "labelEmail": "Seu Email",

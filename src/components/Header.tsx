@@ -54,7 +54,7 @@ export const Header = memo(({ inView }: IHeaderProps) => {
 
   const changeBackground = () => {
     const { scrollY } = window;
-    if (scrollY >= 15) {
+    if (scrollY >= 1) {
       setNavbar(true);
     } else {
       setNavbar(false);
@@ -139,7 +139,7 @@ export const Header = memo(({ inView }: IHeaderProps) => {
             </Menu.Target>
 
             <Menu.Dropdown className="[&>div.mantine-Menu-arrow]:border-gray-500 lg:hidden border-gray-500 dark:border-white dark:bg-gray-700">
-              <Menu.Label>Navigation</Menu.Label>
+              <Menu.Label>{t("header.navigation")}</Menu.Label>
 
               {data.map((item, index) => (
                 <Menu.Item
@@ -161,7 +161,7 @@ export const Header = memo(({ inView }: IHeaderProps) => {
 
               <Menu.Divider />
 
-              <Menu.Label>Settings</Menu.Label>
+              <Menu.Label>{t("header.settings")}</Menu.Label>
               <Menu.Item
                 className=" dark:text-white hover:bg-gray-200 focus:bg-sky-200 dark:dark: focus:dark:bg-gray-500 hover:dark:bg-gray-500 transition-colors duration-300 ease-in"
                 onClick={HandleChangeTheme}
@@ -172,7 +172,7 @@ export const Header = memo(({ inView }: IHeaderProps) => {
                     <IconMoonStars className="border rounded-full border-gray-300 h-6 w-6 p-1 text-cyan-500" />
                   )
                 }>
-                {theme === "dark" ? "Dark Mode" : "Light Mode"}
+                {theme === "dark" ? t("header.dark") : t("header.light")}
               </Menu.Item>
             </Menu.Dropdown>
           </Menu>

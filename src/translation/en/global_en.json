@@ -11,6 +11,12 @@
     "projects": "Projects",
     "contact": "Contact"
   },
+  "header": {
+    "navigation": "Navigation",
+    "settings": "Settings",
+    "dark": "Dark Mode",
+    "light": "Light Mode"
+  },
   "home": {
     "title": "Hello I'm,",
     "description": "I have a degree in Systems Analysis and Development",

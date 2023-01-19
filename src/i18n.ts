@@ -1,6 +1,5 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
 import enus from "./translation/en/global_en.json";
 import ptbr from "./translation/pt/global_pt.json";
 
