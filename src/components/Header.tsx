@@ -71,8 +71,10 @@ export const Header = memo(({ inView }: IHeaderProps) => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", changeBackground);
-  }, []);
+    if (typeof window !== 'undefined' && window.onscroll !== undefined) {
+        window.addEventListener("scroll", changeBackground);
+    }
+}, []);
 
   useEffect(() => {
     setActive(inView);

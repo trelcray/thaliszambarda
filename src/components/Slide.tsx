@@ -27,14 +27,14 @@ export function Slide({
           src={urlImage}
           alt="developer cartoon"
         />
-        <div className="hidded duration-500 ease-in-out hidden text-center w-full text-white p-2 justify-end">
+        <div className="hidded duration-500 ease-in-out lg:hidden text-center w-full text-white p-2 justify-end">
           <p className="text-black dark:text-white text-xs w-full">
             {description}
           </p>
         </div>
       </div>
       <Flex className="w-full h-full pb-1 justify-around max-h-24">
-        <Flex className="info flex-col text-center text-white justify-end">
+        <Flex className="info flex-col text-center text-white justify-between lg:justify-end">
           <Title className="text-black dark:text-white text-base md:text-lg">
             {title}
           </Title>
@@ -61,9 +61,9 @@ export function Slide({
             />
           </div>
         </Flex>
-        <div className="buttons flex flex-col justify-end">
+        <div className="buttons flex flex-col justify-between lg:justify-end">
           <Anchor
-            className="hidden no-underline"
+            className="lg:hidden no-underline"
             href={urlProject}
             target="_blank">
             <Button className="min-w-[8.5rem] p-1 bg-cyan-400 border-cyan-400 hover:bg-cyan-500 hover:border-cyan-500 dark:hover:bg-cyan-500 dark:hover:border-cyan-500">

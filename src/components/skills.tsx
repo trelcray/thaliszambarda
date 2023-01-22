@@ -192,7 +192,7 @@ export function Skills() {
             <FeaturedProject
               src="/portfolio.svg"
               urlGithub="https://github.com/trelcray/thaliszambarda"
-              urlProject=""
+              urlProject="https://www.figma.com/file/MEf4Rhmg0mXmAsqus0Iyan/Thalis-Zambarda?node-id=0%3A1&t=ZjremfQLvHQnBU3U-1"
               description={t("projectsData.description3")}
               title={t("projectsData.title3")}>
               <Image
