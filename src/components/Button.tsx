@@ -1,4 +1,4 @@
-import { Button as PrimitiveButton, ButtonProps } from "@mantine/core";
+import { Button as PrimitiveButton } from "@mantine/core";
 import clsx from "clsx";
 import { IButtonProps } from "../@types/global";
 

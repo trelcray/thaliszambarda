@@ -1,4 +1,4 @@
-import { Box, Text, Title } from "@mantine/core";
+import { Anchor, Box, Text, Title } from "@mantine/core";
 import Image from "next/image";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { Button } from "./Button";
@@ -13,6 +13,12 @@ export function Home() {
     loop: true,
     delaySpeed: 3000,
   });
+
+  const handleScrollintoView = () => {
+    const href = document.getElementById("contact");
+    href?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="flex flex-col lg:flex-row justify-center md:gap-2 items-center mx-2 lg:pb-28 min-h-screen">
       <Box className="flex flex-col gap-10">
@@ -28,11 +34,13 @@ export function Home() {
             {t("home.description")}
           </Text>
         </section>
-        <Button
-          className="text-gray-900 border-gray-900 dark:border-cyan-400 hover:bg-gray-200/60"
-          leftIcon={<IconRubberStamp size={20} />}>
-          {t("home.button")}
-        </Button>
+        <Anchor onClick={handleScrollintoView} variant="link">
+          <Button
+            className="text-gray-900 border-gray-900 dark:border-cyan-400 hover:bg-gray-200/60 w-full"
+            leftIcon={<IconRubberStamp size={20} />}>
+            {t("home.button")}
+          </Button>
+        </Anchor>
       </Box>
       <Image
         className="bg-cover w-[45rem] h-[35rem]"
